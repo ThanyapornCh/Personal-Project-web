@@ -1,4 +1,5 @@
-import { lllLogo } from '../assets/icons';
+import lllLogo from '../assets/icons/lll.png';
+import LoginForm from '../features/Auth/LoginForm';
 
 export default function LoginPage() {
   return (
@@ -7,7 +8,13 @@ export default function LoginPage() {
     bg-gradient-to-br from-purple-700 to-amber-700"
     >
       <div className="bg-pink rounded-xl">
-        <img className="w-full h-[300px] object-cover" src={lllLogo} />
+        <div className="bg-white box-border rounded-xl w-100  drop-shadow-lg flex justify-center">
+          <img
+            className="flex justify-center object-cover"
+            src={lllLogo}
+            width="50px"
+          />
+        </div>
         <span className="flex-center box-decoration-slice w-10  text-white px-2 rounded-5">
           <h1 className="flex justify-center text-3xl font-bold text-white">
             Login
@@ -55,7 +62,6 @@ export default function LoginPage() {
               >
                 Sign In
               </button>
-
               <p className="text-right">
                 <a
                   className="text-blue-600 text-sm font-light hover:underline"
@@ -66,9 +72,11 @@ export default function LoginPage() {
               </p>
             </div>
           </form>
-          <button className="bg-[#F67280]-500 hover:bg-[#F67280]-700 text-white rounded-x1 justify-items-center">
-            Create New Account
-          </button>
+          <div className="flex justify-center">
+            <button className="bg-[#F67280]-500 hover:bg-[#F67280]-700 text-white rounded-x1 flex justify-center ">
+              Create New Account
+            </button>
+          </div>
         </span>
         <div className="flex flex-justify-center my-10 mx-20">
           <div className="text-4xl text-[#fff] flex-col m-2 p-2">
