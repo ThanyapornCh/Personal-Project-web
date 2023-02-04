@@ -3,9 +3,18 @@ export default function () {
     // Start Data skin Type (check)
     <>
       <div
-        className="w-screen h-screen flex justify-center items-center
+        className="w-screen h-screen flex justify-center flex-col 
     bg-gradient-to-br from-purple-700 to-amber-700 "
       >
+        <form className="flex justify-center p-10">
+          <span
+            className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-white text-3xl  box-border md:box-content
+             duration-300 ease-in"
+            type="submit"
+          >
+            Check Skin Types
+          </span>
+        </form>
         <form
           className="p-10 backdrop-blur-md bg-white/40 rounded-xl drop-shadow-lg space-y-5"
           action=""
@@ -42,7 +51,7 @@ export default function () {
           </button>
         </form>
       </div>
-      End Data SkinType (check) start Problem (check)
+      {/* End Data SkinType (check) start Problem (check) */}
       <div
         className="w-screen h-screen flex justify-center flex-col grid-xl items-center
     bg-gradient-to-br from-purple-700 to-amber-700 "

@@ -1,5 +1,5 @@
 import lllLogo from '../assets/icons/lll.png';
-import LoginForm from '../features/Auth/LoginForm';
+// import LoginForm from '../features/Auth/LoginForm';
 
 export default function LoginPage() {
   return (
@@ -7,14 +7,7 @@ export default function LoginPage() {
       className="w-screen h-screen flex justify-center items-center
     bg-gradient-to-br from-purple-700 to-amber-700"
     >
-      <div className="bg-pink rounded-xl">
-        <div className="bg-white box-border rounded-xl w-100  drop-shadow-lg flex justify-center">
-          <img
-            className="flex justify-center object-cover"
-            src={lllLogo}
-            width="50px"
-          />
-        </div>
+      <div className="bg-pink rounded-xl ">
         <span className="flex-center box-decoration-slice w-10  text-white px-2 rounded-5">
           <h1 className="flex justify-center text-3xl font-bold text-white">
             Login
@@ -24,6 +17,13 @@ export default function LoginPage() {
             className=" max-w-sm mx-auto p-10 bg-white rounded-xl drop-shadow-lg space-y-5 m-md"
             action=""
           >
+            <div className="flex justify-center">
+              <img
+                className="flex justify-center object-cover"
+                src={lllLogo}
+                width="60px"
+              />
+            </div>
             <label className="block">
               <span className="block text-sm font-medium text-slate-700">
                 Email
