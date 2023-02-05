@@ -4,7 +4,7 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 
 export default function SearchBar() {
   return (
-    <nav className="top-0 z-100 fixed w-full backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
+    <nav className="sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
       <form className="flex items-center ">
         <button>
           <Bars3Icon className="h-8 w-8 text-white mx-3" />

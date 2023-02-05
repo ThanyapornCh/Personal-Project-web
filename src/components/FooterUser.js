@@ -1,5 +1,11 @@
-import { HomeIcon } from '@heroicons/react/24/solid';
+import {
+  ChatBubbleOvalLeftEllipsisIcon,
+  HomeIcon,
+  ShoppingBagIcon,
+} from '@heroicons/react/24/solid';
 import { HeartIcon } from '@heroicons/react/24/solid';
+// import { ShoppingBagIcon } from '@heroicons/react/24/solid';
+import { UserIcon } from '@heroicons/react/24/solid';
 
 export default function FooterUser() {
   return (
@@ -10,20 +16,20 @@ export default function FooterUser() {
             text-2xl"
     >
       <div className="flex justify-center ">
-        <button className="flex-col m-2 p-2 text-3xl text-pink ">
-          <HomeIcon className="h-8 w-8 text-pink mx-3" />
+        <button className="flex-col m-2 p-2 text-3xl ">
+          <HomeIcon className="h-8 w-8 text-purple-500 mx-3" />
         </button>
-        <button className="flex-col m-2 p-2  text-3xl text-pink">
-          <HeartIcon className="h-8 w-8  mx-3" />
+        <button className="flex-col m-2 p-2  text-3xl ">
+          <HeartIcon className="h-8 w-8 text-purple-500 mx-3" />
         </button>
-        <button className="flex-col m-2 p-2 text-3xl text-pink">
-          <i className="fa-light fa-solid fa-message" />
+        <button className="flex-col m-2 p-2 text-3xl ">
+          <ChatBubbleOvalLeftEllipsisIcon className="h-8 w-8 text-purple-500 mx-3" />
         </button>
-        <button className="flex-col m-2 p-2 text-3xl text-[0A0707]">
-          <i className="fa-light fa-solid fa-basket-shopping" />
+        <button className="flex-col m-2 p-2 text-3xl ">
+          <ShoppingBagIcon className="h-8 w-8 text-purple-500 mx-3" />
         </button>
-        <button className="flex-col m-2 p-2 text-3xl text-[0A0707]">
-          <i className="fa-light fa-solid fa-user" />
+        <button className="flex-col m-2 p-2 text-3xl ">
+          <UserIcon className="h-8 w-8 text-purple-500 mx-3" />
         </button>
       </div>
     </footer>

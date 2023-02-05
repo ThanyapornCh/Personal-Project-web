@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        beetle: "url('https://custom.image/name.jpg')",
+      },
       fontFamily: {
         sans: ['"Montserrat"', ...defaultTheme.fontFamily.sans],
       },

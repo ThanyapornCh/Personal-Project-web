@@ -58,8 +58,7 @@ export default function () {
       >
         <form className="flex justify-center p-10">
           <span
-            className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-white text-3xl  box-border md:box-content
-             duration-300 ease-in"
+            className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-white text-3xl  box-border md:box-content duration-300 ease-in"
             type="submit"
           >
             Check Skin Types
