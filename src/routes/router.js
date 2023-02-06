@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage';
 import UserPage from '../pages/UserPage';
 import CategoriesPage from '../components/CategoriesPage';
 import ProductsPage from '../pages/ProductsPage';
+import ProfilePage from '../pages/ProfilePage';
 
 const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: '/productspage',
     element: <ProductsPage />,
+  },
+  {
+    path: '/profilepage',
+    element: <ProfilePage />,
   },
 ]);
 

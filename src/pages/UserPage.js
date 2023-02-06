@@ -13,7 +13,7 @@ export default function UserPage() {
           />
           Sophia Amber
         </div>
-        <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 flex justify-center items-center   ">
+        <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 flex justify-center items-center mx-5 ">
           <div className="flex flex-wrap gap-2 ">
             <div className="flex justify-center">
               <button className="flex justify-center bold-2 shadow-xl rounded-full wx-30 border-2 border-slate-300 hover:border-pink-300">
