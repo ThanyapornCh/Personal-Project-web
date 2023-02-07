@@ -1,17 +1,53 @@
+// import input from '../components/Input';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import { navigate, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 export default function DataPersonalPage() {
-  // let prevButton = null;
-  // const wrapper = document.getElementById('wrapper');
-  // const isButton = e.target.nodeName === 'BUTTON';
-  // wrapper.addEventListener('click', e => {
-  //   if (!isButton) {
-  //     return;
-  //   }
-  //   e.target.classList.add('active'); // Add .active CSS Class
-  //   if (prevButton !== null) {
-  //     prevButton.classList.remove('active'); // Remove .active CSS Class
-  //   }
-  //   prevButton = e.target;
-  // });
+  const initialProblem = {
+    acne: false,
+    malasma: false,
+    blemish: false,
+    wrinklespore: false,
+    darkCircles: false,
+    pore: false,
+  };
+  const [problems, setProblems] = useState({});
+  const handleClickProblem = e => {
+    setProblems({ ...problems, [e.target.name]: !problems[e.target.name] });
+  };
+
+  const initialProduct = {
+    facialCleanser: false,
+    serum: false,
+    moisturizer: false,
+    sunscreen: false,
+    sleepingMask: false,
+    eyeCream: false,
+  };
+  const [products, setProducts] = useState(initialProduct);
+  const handleClickProduct = e => {
+    setProducts({ ...products, [e.target.name]: !products[e.target.name] });
+  };
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
+  const initialTypes = {
+    drySkin: false,
+    combinationSkin: false,
+    oilySkin: false,
+    sensitiveSkin: false,
+  };
+
+  const [types, setTypes] = useState(initialTypes);
+  function checkRadio(e) {
+    setTypes({ [e.target.name]: !types[e.target.name] });
+  }
+
+  const navigate = useNavigate();
+  function toHomepage() {
+    navigate('/homepage');
+  }
 
   return (
     // Start Data skin Type (check)
@@ -20,7 +56,7 @@ export default function DataPersonalPage() {
         className="w-screen h-screen flex justify-center flex-col 
     bg-gradient-to-br from-purple-700 to-amber-700 "
       >
-        <form className="flex justify-center p-8">
+        <form className="flex justify-center p-10">
           <span
             className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-white text-3xl  box-border md:box-content
              duration-300 ease-in"
@@ -29,39 +65,61 @@ export default function DataPersonalPage() {
             Check Skin Types
           </span>
         </form>
-        <form className="p-10 backdrop-blur-md bg-white/40 rounded-xl drop-shadow-lg space-y-5">
+        <form
+          className="p-10 backdrop-blur-md bg-white/40 rounded-xl drop-shadow-lg space-y-5"
+          action=""
+        >
           <h1 className="text-center text-3xl text-black">Skin Types</h1>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
-            onClick={wrapper}
+            onClick={checkRadio}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              types.drySkin
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : ''
+            }`}
+            type="button"
+            name="drySkin"
           >
             Dry Skin
           </button>
 
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            onClick={checkRadio}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              types.combinationSkin
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : ''
+            }`}
+            type="button"
+            name="combinationSkin"
           >
             Combination Skin
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            onClick={checkRadio}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              types.oilySkin
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : ''
+            }`}
+            type="button"
+            name="oilySkin"
           >
             Oily Skin
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            onClick={checkRadio}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              types.sensitiveSkin
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : ''
+            }`}
+            type="button"
+            name="sensitiveSkin"
           >
             Sensitive Skin
           </button>
@@ -88,51 +146,77 @@ export default function DataPersonalPage() {
             facial skin problems
           </h1>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="acne"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
+            type="button"
           >
             acne
           </button>
 
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="melasma"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              problems.melasma
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             melasma
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="blemish"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              problems.blemish
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             blemish
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="wrinklespore"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              problems.wrinklespore
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             wrinklespore
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="darkCircles"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              problems.darkCircles
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             dark circles
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="pore"
+            onClick={handleClickProblem}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              problems.pore
+                ? ' bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             pore
           </button>
@@ -159,57 +243,95 @@ export default function DataPersonalPage() {
         >
           <h1 className="text-center text-2xl text-black">skin care</h1>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="facialCleanser"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+              products.facialCleanser
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+                : 'bg-pink-600'
+            }`}
+            type="button"
           >
             facial cleanser
           </button>
 
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="serum"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+          hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            products.serum
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+              : 'bg-pink-600'
+          }`}
+            type="button"
           >
             serum
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="moisturizer"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+          hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            products.moisturizer
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+              : 'bg-pink-600'
+          }`}
+            type="button"
           >
             moisturizer
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="sunscreen"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+          hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            products.sunscreen
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+              : 'bg-pink-600'
+          }`}
+            type="button"
           >
-            Sunscreen
+            sunscreen
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="sleepingMask"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+          hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            products.sleepingMask
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+              : 'bg-pink-600'
+          }`}
+            type="button"
           >
             sleeping mask
           </button>
           <button
-            className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
-            type="submit"
-            id="wrapper"
+            name="eyeCream"
+            onClick={handleClickProduct}
+            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+          hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            products.eyeCream
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
+              : 'bg-pink-600'
+          }`}
+            type="button"
           >
             {' '}
             eye cream
             {/* facial cleanser */}
           </button>
         </form>
+        <br />
+        <button
+          className=" backdrop-blur-md bg-white/40 rounded-full drop-shadow-lg"
+          type="button"
+          onClick={toHomepage}
+        >
+          <ChevronRightIcon className="h-8 w-8 text-white mx-3" />
+        </button>
       </div>
     </>
   );
