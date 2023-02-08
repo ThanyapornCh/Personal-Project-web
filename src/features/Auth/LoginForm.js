@@ -16,7 +16,7 @@ export default function LoginForm() {
       console.log(email, password);
       const res = await login({ email, password });
       console.log(res.data);
-      navigate('/homepage');
+      navigate('/datapersonal');
 
       toast.success('success login');
     } catch (err) {

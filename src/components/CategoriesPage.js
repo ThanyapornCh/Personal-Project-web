@@ -1,5 +1,6 @@
 import { Sidebar } from 'flowbite-react';
 import SearchBar from '../components/SearchBar';
+// import { MagnifyingGlass } from 'flowbite-react';
 
 export default function CategoriesPage() {
   return (
@@ -8,6 +9,7 @@ export default function CategoriesPage() {
         <Sidebar.Items>
           <Sidebar.ItemGroup>
             <Sidebar.Item>Search</Sidebar.Item>
+            {/* <MagnifyingGlass className="h-8 w-8 text-purple-500 mx-3" /> */}
             <Sidebar.Item>Facial cleanser</Sidebar.Item>
             <Sidebar.Item>Serum</Sidebar.Item>
             <Sidebar.Item>Moisturizer</Sidebar.Item>
@@ -15,7 +17,6 @@ export default function CategoriesPage() {
             <Sidebar.Item>Sunscreen</Sidebar.Item>
             <Sidebar.Item>Sleeping mask</Sidebar.Item>
             <Sidebar.Item>Users</Sidebar.Item>
-            <Sidebar.Item>Products</Sidebar.Item>
             <Sidebar.Item>Sign In</Sidebar.Item>
             <Sidebar.Item>Sign Up</Sidebar.Item>
           </Sidebar.ItemGroup>
