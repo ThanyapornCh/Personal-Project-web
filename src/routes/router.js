@@ -4,9 +4,12 @@ import SignUpPage from '../pages/SignupPage';
 import DataPersonalPage from '../pages/DataPersonalPage';
 import HomePage from '../pages/HomePage';
 import UserPage from '../pages/UserPage';
-import CategoriesPage from '../components/CategoriesPage';
+import MenuBar from '../components/MenuBar';
 import ProductsPage from '../pages/ProductsPage';
 import ProfilePage from '../pages/ProfilePage';
+import CartsPage from '../pages/CartsPage';
+import PaymentPage from '../pages/PaymentPage';
+import CleanserPage from '../pages/Products/CleanserPage';
 
 const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -29,8 +32,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/categoriespage',
-    element: <CategoriesPage />,
+    path: '/menubar',
+    element: <MenuBar />,
   },
 
   {
@@ -38,8 +41,22 @@ const router = createBrowserRouter([
     element: <ProductsPage />,
   },
   {
+    path: '/cleanser',
+    element: <CleanserPage />,
+  },
+
+  {
     path: '/profilepage',
     element: <ProfilePage />,
+  },
+  {
+    path: '/cartspage',
+    element: <CartsPage />,
+  },
+
+  {
+    path: '/paymentpage',
+    element: <PaymentPage />,
   },
 ]);
 

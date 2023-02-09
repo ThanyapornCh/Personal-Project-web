@@ -22,7 +22,7 @@ export default function UserPage() {
                 </div>
                 200
               </button>
-              <button className="rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xlfont-medium drop-shadow-xl">
+              <button className="rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
                 Promotions
               </button>
             </div>
