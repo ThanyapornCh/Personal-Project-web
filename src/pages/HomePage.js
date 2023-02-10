@@ -1,7 +1,13 @@
 import { Carousel } from 'flowbite-react';
-import { Card } from 'flowbite-react';
+// import { Card } from 'flowbite-react';
 import FooterUser from '../components/FooterUser';
 import SearchBar from '../components/SearchBar';
+import bg01Pic from '../assets/images/bg01.png';
+import bg02Pic from '../assets/images/bg02.png';
+import bg03Pic from '../assets/images/bg03.png';
+import bg04Pic from '../assets/images/bg04.png';
+import bg05Pic from '../assets/images/bg05.png';
+import CleanserPage from './Products/CleanserPage';
 // import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 
 export default function Homepage() {
@@ -11,35 +17,16 @@ export default function Homepage() {
       <div className="h-auto w-screen mt-4 flex flex-col gap-10">
         <div className="h-56 w-full">
           <Carousel className="h-56 w-full">
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-              alt="..."
-              className="h-56 w-full object-cover"
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-              alt="..."
-              className="h-56 w-full object-cover"
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-              alt="..."
-              className="h-56 w-full object-cover"
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-              alt="..."
-              className="h-56 w-full object-cover"
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-              alt="..."
-              className="h-56 w-full object-cover"
-            />
+            <img src={bg01Pic} alt="..." className="h-56 w-full object-cover" />
+            <img src={bg02Pic} alt="..." className="h-56 w-full object-cover" />
+            <img src={bg03Pic} alt="..." className="h-56 w-full object-cover" />
+            <img src={bg04Pic} alt="..." className="h-56 w-full object-cover" />
+            <img src={bg05Pic} alt="..." className="h-56 w-full object-cover" />
           </Carousel>
         </div>
+        <CleanserPage />
 
-        <div className="w-full h-auto flex justify-center items-center flex-wrap px-10 gap-8">
+        {/* <div className="w-full h-auto flex justify-center items-center flex-wrap px-10 gap-8">
           <div className="w-[300px] h-[400px] flex justify items-center">
             <Card
               imgAlt="Meaningful alt text for an image that is not purely decorative"
@@ -163,9 +150,9 @@ export default function Homepage() {
                 </div>
               </Card>
             </div>
-          </div>
-          {/* </div> */}
-        </div>
+          </div> */}
+        {/* </div> */}
+        {/* </div> */}
         <FooterUser />
       </div>
     </>

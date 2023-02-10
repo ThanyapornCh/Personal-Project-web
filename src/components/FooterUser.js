@@ -11,7 +11,7 @@ export default function FooterUser() {
   return (
     <footer
       className="w-full h-16 bg-white border-t-2 border-white
-            fixed left-0 bottom-0 right-0
+            sticky left-0 bottom-0 right-0
             flex justify-center items-center
             text-2xl"
     >

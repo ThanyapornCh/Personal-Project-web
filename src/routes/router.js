@@ -10,14 +10,19 @@ import ProfilePage from '../pages/ProfilePage';
 import CartsPage from '../pages/CartsPage';
 import PaymentPage from '../pages/PaymentPage';
 import CleanserPage from '../pages/Products/CleanserPage';
+import CartsAdminPage from '../pages/CartsAdminPage';
+import RedirectIfAuthenticate from '../features/Auth/RedirectIfAuthenticate';
 
 const router = createBrowserRouter([
-  { path: '/login', element: <LoginPage /> },
-
   {
-    path: '/signup',
-    element: <SignUpPage />,
+    path: '/login',
+    element: (
+      <RedirectIfAuthenticate>
+        <LoginPage />
+      </RedirectIfAuthenticate>
+    ),
   },
+
   {
     path: '/datapersonal',
     element: <DataPersonalPage />,
@@ -57,6 +62,15 @@ const router = createBrowserRouter([
   {
     path: '/paymentpage',
     element: <PaymentPage />,
+  },
+
+  {
+    path: '/cartadminpage',
+    element: <CartsAdminPage />,
+  },
+  {
+    path: '/signup',
+    element: <SignUpPage />,
   },
 ]);
 
