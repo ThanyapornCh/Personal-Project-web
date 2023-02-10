@@ -22,6 +22,10 @@ const router = createBrowserRouter([
       </RedirectIfAuthenticate>
     ),
   },
+  {
+    path: '/signup',
+    element: <SignUpPage />,
+  },
 
   {
     path: '/datapersonal',
@@ -67,10 +71,6 @@ const router = createBrowserRouter([
   {
     path: '/cartadminpage',
     element: <CartsAdminPage />,
-  },
-  {
-    path: '/signup',
-    element: <SignUpPage />,
   },
 ]);
 

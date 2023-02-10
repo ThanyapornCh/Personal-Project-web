@@ -3,14 +3,16 @@ import FooterUser from '../../components/FooterUser';
 // import SearchBar from '../../components/SearchBar';
 import CleanserPic from '../../assets/images/cleanser.png';
 import CleanserCard from './CleanserCard';
+import useProduct from '../../hooks/useProduct';
 // import { Card } from 'flowbite-react';
 
 export default function CleanserPage() {
+  const { products } = useProduct();
   return (
     <div className="w-full h-auto flex justify-center items-center flex-wrap px-10 gap-8">
       {/* <h1 className=" flex flex-col ">Facial Cleanser</h1> */}
       {/* Card */}
-      <div className="w-[300px] h-[400px] flex flex-col items-center shadow-lg p-3 rounded-lg">
+      {/* <div className="w-[300px] h-[400px] flex flex-col items-center shadow-lg p-3 rounded-lg">
         <div class="w-60 h-80 p-5 rounded-xl  bg-white max-w-sm transform transition-all hover: -translate-y-2 duation-300">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
             <img
@@ -149,7 +151,7 @@ export default function CleanserPage() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div className="w-[300px] h-[400px] flex flex-col items-center shadow-lg p-3 rounded-lg">
         <div class="w-60 h-80 p-5 rounded-xl  bg-white max-w-sm transform transition-all hover: -translate-y-2 duation-300">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -178,12 +180,16 @@ export default function CleanserPage() {
           </div>
         </div>
       </div> */}
-      <CleanserCard
-        name=" Facial Cleanser2"
-        discricptions="Some quick example text to build on the card title and make up the
-            bulk of the card's content."
-        productPicture=""
-      />
+      {products &&
+        products.map(el => (
+          <CleanserCard
+            name={el.productName}
+            discricptions={el.productDescription}
+            productPicture={el.productImage}
+            key={el.id}
+            id={el.id}
+          />
+        ))}
     </div>
   );
 }

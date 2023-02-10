@@ -8,6 +8,7 @@ import bg03Pic from '../assets/images/bg03.png';
 import bg04Pic from '../assets/images/bg04.png';
 import bg05Pic from '../assets/images/bg05.png';
 import CleanserPage from './Products/CleanserPage';
+import useProduct from '../hooks/useProduct';
 // import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 
 export default function Homepage() {
