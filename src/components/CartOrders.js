@@ -1,5 +1,14 @@
 import CleanserPic from '../assets/images/cleanser.png';
+import React, { useState } from 'react';
+// import { useReducer } from 'react';
+
 export default function CartOrders() {
+  const [count, setCount] = React.useState(0);
+  console.log('lll');
+  const handleInputChange = input => e => {
+    return function (event) {};
+    e.preventDefault();
+  };
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -60,7 +69,51 @@ export default function CartOrders() {
                   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                     @mdo
                   </td>
-                  <td>1</td>
+                  <td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          setCount(count + 1);
+                        }}
+                        className="w-5 h-5 mx-2 bg-green-600 text-white font-medium text-lg rounded-sm"
+                      >
+                        +
+                      </button>
+                      <input
+                        className="w-[25px] border-spacing-1 align-text-center "
+                        onChange={handleInputChange}
+                        count="count"
+                      />
+                      <button
+                        onClick={() => {
+                          if (count > 0) setCount(count - 1);
+                        }}
+                        className="w-5 h-5 mx-2 bg-red-600 text-white font-medium text-lg rounded-sm"
+                      >
+                        -
+                      </button>
+                    </td>
+                    {/* {cartItems.length === 0 && <div>Cart is empty</div>}
+                    {cartItems.map(products => (
+                      <div key={products.id} className="row">
+                        <div className="col-2">{products.name}</div>
+                        <button
+                          onClick={() => onDelete(products)}
+                          value={onDelete}
+                          className="bg-blue-500 text-white"
+                        >
+                          -
+                        </button>{' '}
+                        <button
+                          className="bg-blue-500 text-white rounded-sm"
+                          onClick={() => onAdd(products)}
+                          value={onAdd}
+                        >
+                          +
+                        </button>
+                      </div>
+                    ))} */}
+                  </td>
                   <td>
                     <div className="flex space-x-2 justify-center">
                       <button
@@ -124,6 +177,38 @@ export default function CartOrders() {
                 </tr>
               </tbody>
             </table>
+
+            {/* {cartItems.length !== 0 && (
+              <>
+                <hr></hr>
+                <div className="row">
+                  <div className="col-2">Items Price</div>
+                  <div className="col-1 text-right">
+                    ${productsPrice.toFixed(2)}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-2">Tax Price</div>
+                  <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
+                </div> */}
+
+            <div className="flex justify-center ">
+              <div className="block p-6 rounded-lg shadow-lg bg-white max-w-xl">
+                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
+                  Total
+                </h5>
+                <div className="col-1 text-right"></div>
+                <button
+                  type="button"
+                  className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
+                  onClick={() => alert('Implement Checkout!')}
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+            {/* </>
+            )}  */}
           </div>
         </div>
       </div>

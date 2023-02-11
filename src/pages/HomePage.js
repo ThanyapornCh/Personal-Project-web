@@ -16,7 +16,7 @@ export default function Homepage() {
     <>
       <SearchBar />
       <div className="h-auto w-screen mt-4 flex flex-col gap-10">
-        <div className="h-56 w-full">
+        <div className="h-100 w-full">
           <Carousel className="h-56 w-full">
             <img src={bg01Pic} alt="..." className="h-56 w-full object-cover" />
             <img src={bg02Pic} alt="..." className="h-56 w-full object-cover" />

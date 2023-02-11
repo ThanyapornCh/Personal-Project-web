@@ -4,10 +4,11 @@ import { Dropdown } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import MenuBar from '../components/MenuBar';
 import { useState } from 'react';
+import React from 'react';
 
 // import Dropdown from '../layouts/Dropdown';
 
-export default function SearchBar() {
+export default function SearchBar(props) {
   const [showDropdown, setShowDropDown] = useState(false);
   return (
     <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
@@ -83,7 +84,7 @@ export default function SearchBar() {
               <path
                 fillRule="evenodd"
                 d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </div>
@@ -107,7 +108,7 @@ export default function SearchBar() {
               <path
                 fillRule="evenodd"
                 d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
@@ -126,9 +127,9 @@ export default function SearchBar() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             ></path>
           </svg>
@@ -138,7 +139,7 @@ export default function SearchBar() {
         <div className="flex flex-row  w-fit py-2 text-3xl mx-2 border-2 border-slate-300 hover:border-pink-300 rounded-full relative">
           <ShoppingBagIcon className="h-6 w-6 text-pink-500 mx-3" />
           <div className="absolute -top-2 -right-1.5 bottom-auto left-auto w-6 h-6 py-1 px-1 leading-none text-center whitespace-nowrap align-baseline font-bold bg-pink-500  text-white  text-sm rounded-full">
-            7
+            {props.countCartItems}
           </div>
         </div>
       </div>

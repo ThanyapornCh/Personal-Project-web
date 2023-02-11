@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function CartOrdersAdmin() {
   const [show, setShow] = useState(false);
-  const handleClck = () => {
+  const handleClick = () => {
     setShow(true);
   };
   const list = [
@@ -73,7 +73,7 @@ export default function CartOrdersAdmin() {
             </table>
             <div className="w-full py-8 flex justify-center items-center">
               <PlusCircleIcon
-                onClick={handleClck}
+                onClick={handleClick}
                 className="h-8 w-8 text-green-500 mx-3"
               />
             </div>

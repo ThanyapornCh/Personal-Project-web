@@ -1,9 +1,8 @@
 // import { Card } from 'flowbite-react';
 import FooterUser from '../../components/FooterUser';
 // import SearchBar from '../../components/SearchBar';
-// import CleanserPic from '../../assets/images/cleanser.png';
-// import CleanserCard from './CleanserCard';
-import EyeCreamCard from './EyeCreamCard';
+
+// import EyeCreamCard from './EyeCreamCard';
 import MoisturizerCard from './MoisturizerCard';
 // import { Card } from 'flowbite-react';
 

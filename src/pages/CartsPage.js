@@ -10,7 +10,7 @@ export default function CartsPage() {
       <HeaderCart />
       <form>
         <CartOrders />
-        <CartTotal />
+        {/* <CartTotal /> */}
       </form>
       <FooterUser />
     </>
