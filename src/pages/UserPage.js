@@ -27,6 +27,25 @@ export default function UserPage() {
               </button>
             </div>
           </div>
+
+          <div className="flex flex-wrap">
+            <button className="rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
+              Unpaid
+            </button>
+            <button className="rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
+              Paid
+            </button>
+          </div>
+          <div>
+            <button
+              name="acne"
+              className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
+              type="button"
+            >
+              Data Personal
+            </button>
+          </div>
         </form>
       </div>
       <FooterUser />

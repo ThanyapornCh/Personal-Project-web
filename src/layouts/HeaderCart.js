@@ -1,12 +1,15 @@
 import { ChevronLeftIcon, ShoppingBagIcon } from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 
 export default function HeaderCart() {
   return (
     <nav className="sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
       <form className="flex items-center my-2 ">
-        <button>
-          <ChevronLeftIcon className="h-8 w-8 text-pink mx-3" />
-        </button>
+        <Link to={{ pathname: '/homepage' }}>
+          <button>
+            <ChevronLeftIcon className="h-8 w-8 text-pink mx-3" />
+          </button>
+        </Link>
         <h4 className="text-pink font-bold ">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500">
             LALA Shop

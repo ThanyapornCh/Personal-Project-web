@@ -147,7 +147,7 @@ export default function CategoriesPage() {
           </Sidebar.ItemGroup>
           <Sidebar.ItemGroup>
             <Sidebar.Item>Users</Sidebar.Item>
-            <Sidebar.Item>Sign Up</Sidebar.Item>
+            <Sidebar.Item>Log out</Sidebar.Item>
             {/* <Sidebar.Item>Help</Sidebar.Item> */}
           </Sidebar.ItemGroup>
         </Sidebar.Items>

@@ -6,13 +6,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthContextProvider from './contexts/AuthContext';
 import ProductContextProvider from './contexts/ProductContext';
+import OrderContextProvider from './contexts/OrderContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <ProductContextProvider>
-        <App />
+        <OrderContextProvider>
+          <App />
+        </OrderContextProvider>
       </ProductContextProvider>
     </AuthContextProvider>
   </React.StrictMode>

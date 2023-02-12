@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import lllLogo from '../assets/icons/lll.png';
 // import CreateNewForm from '../features/Auth/CreateNewForm';
 import LoginForm from '../features/Auth/LoginForm';
@@ -37,9 +38,11 @@ export default function LoginPage() {
           </div>
           {/* <CreateNewForm /> */}
           <div className="flex justify-center">
-            <button className="bg-[#F67280]-500 hover:bg-[#F67280]-700 text-white rounded-x1 flex justify-center ">
-              Create New Account
-            </button>
+            <Link to={{ pathname: '/signup' }}>
+              <button className="bg-[#F67280]-500 hover:bg-[#F67280]-700 text-white rounded-x1 flex justify-center ">
+                Create New Account
+              </button>
+            </Link>
           </div>
         </span>
         <div className="flex flex-justify-center my-10 mx-20">

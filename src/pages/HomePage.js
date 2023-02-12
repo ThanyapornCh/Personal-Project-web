@@ -9,7 +9,7 @@ import bg04Pic from '../assets/images/bg04.png';
 import bg05Pic from '../assets/images/bg05.png';
 import CleanserPage from './Products/CleanserPage';
 import useProduct from '../hooks/useProduct';
-// import { ShoppingBagIcon } from '@heroicons/react/24/solid';
+import { createContext, useReducer } from 'react';
 
 export default function Homepage() {
   return (

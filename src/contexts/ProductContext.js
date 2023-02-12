@@ -1,6 +1,5 @@
-import axios from '../config/axios';
 import { createContext, useEffect, useState } from 'react';
-
+import * as productApi from '../apis/product-api';
 export const ProductContext = createContext();
 
 export default function ProductContextProvider({ children }) {
@@ -11,19 +10,18 @@ export default function ProductContextProvider({ children }) {
 
   useEffect(() => {
     const run = async () => {
-      const res = await axios.get('/products/allproducts');
-      const products = res.data;
-      console.log(products);
-      setProducts(products.products);
+      const res = await productApi.getAllProductApi();
+      setProducts(res.data.products);
     };
     run();
   }, []);
+  console.log(products);
 
   // const login = async input => {
   //   return await axios.post('http://localhost:8888/auth/login', input);
   // };
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, setProducts }}>
       {children}
     </ProductContext.Provider>
   );

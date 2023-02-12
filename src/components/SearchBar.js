@@ -3,13 +3,20 @@ import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 import { Dropdown } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import MenuBar from '../components/MenuBar';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import React from 'react';
-
+// import { ProductContext } from '../../contexts/ProductContext';
 // import Dropdown from '../layouts/Dropdown';
 
 export default function SearchBar(props) {
   const [showDropdown, setShowDropDown] = useState(false);
+  const [addCart, setAddCart] = useState('');
+  const handleClick = () => {
+    setAddCart(true);
+  };
+  console.log(addCart);
+
+  // const [products, setProducts] = useContext(ProductContext);
   return (
     <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
       <div className="flex items-center my-2">
@@ -54,7 +61,7 @@ export default function SearchBar(props) {
               </Dropdown.Item>
 
               <Dropdown.Item>
-                <Link to={'/userpage'}>Users</Link>
+                <Link to={{ pathname: '/userpage' }}>Users</Link>
               </Dropdown.Item>
 
               <Dropdown.Item>
@@ -97,21 +104,7 @@ export default function SearchBar(props) {
           <button
             type="button"
             className="absolute inset-y-0 right-0 flex items-center pr-3"
-          >
-            <svg
-              aria-hidden="true"
-              className="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </button>
+          ></button>
         </div>
         <button
           type="submit"
@@ -136,8 +129,13 @@ export default function SearchBar(props) {
           Search
         </button>
 
-        <div className="flex flex-row  w-fit py-2 text-3xl mx-2 border-2 border-slate-300 hover:border-pink-300 rounded-full relative">
-          <ShoppingBagIcon className="h-6 w-6 text-pink-500 mx-3" />
+        <div
+          onClick={handleClick}
+          className="flex flex-row  w-fit py-2 text-3xl mx-2 border-2 border-slate-300 hover:border-pink-300 rounded-full relative"
+        >
+          <Link to={{ pathname: '/cartspage' }}>
+            <ShoppingBagIcon className="h-6 w-6 text-pink-500 mx-3" />
+          </Link>
           <div className="absolute -top-2 -right-1.5 bottom-auto left-auto w-6 h-6 py-1 px-1 leading-none text-center whitespace-nowrap align-baseline font-bold bg-pink-500  text-white  text-sm rounded-full">
             {props.countCartItems}
           </div>

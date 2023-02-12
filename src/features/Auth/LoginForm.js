@@ -3,6 +3,7 @@ import { navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import useAuth from '../../hooks/useAuth';
+import { setAccessToken } from '../../utils/local-storage';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ export default function LoginForm() {
       console.log(email, password);
       const res = await login({ email, password });
       console.log(res.data);
+      setAccessToken(res.data.accessToken);
       navigate('/datapersonal');
 
       toast.success('success login');

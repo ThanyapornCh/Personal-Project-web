@@ -6,7 +6,7 @@ export default function CartTotal() {
           Total
         </h5>
         <div className="col-1 text-right">
-          <strong>${totalPrice.toFixed(2)}</strong>
+          {/* <strong>${totalPrice.toFixed(2)}</strong> */}
         </div>
         <button
           type="button"
