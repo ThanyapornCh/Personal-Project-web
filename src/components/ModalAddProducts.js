@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   createProductApi,
   getAllBrandApi,
   getAllCategoriesApi,
 } from '../apis/product-api';
+import useProduct from '../hooks/useProduct';
 
 export default function ModalAddProducts({ show, setClose }) {
   const [productName, setProductName] = useState('');
@@ -13,6 +15,8 @@ export default function ModalAddProducts({ show, setClose }) {
   const [productImage, setProductImage] = useState(null);
 
   console.log('first');
+
+  const navigate = useNavigate();
 
   const handleSubmitForm = async e => {
     e.preventDefault();
@@ -48,6 +52,20 @@ export default function ModalAddProducts({ show, setClose }) {
   const [allBrand, setAllBrand] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
 
+  const {
+    newProduct,
+    setNewProduct,
+    newProductImage,
+    setNewProductImage,
+    handleCreate,
+  } = useProduct();
+  console.log(newProductImage);
+
+  const handleOnclick = () => {
+    handleCreate();
+    navigate('/homepage');
+  };
+
   return (
     <div
       className={`w-screen h-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.3)] ${
@@ -73,7 +91,7 @@ export default function ModalAddProducts({ show, setClose }) {
               Image
             </label>
             <input
-              onChange={e => setProductImage(e.target.value)}
+              onChange={e => setNewProductImage(e.target.files[0])}
               value={productImage}
               className="form-control
     block
@@ -99,8 +117,10 @@ export default function ModalAddProducts({ show, setClose }) {
               </span>
               <input
                 className="w-full px-3 py-2 rounded-md border border-slate-400"
-                value={productName}
-                onChange={e => setProductName(e.target.value)}
+                value={newProduct.productName}
+                onChange={e =>
+                  setNewProduct({ ...newProduct, productName: e.target.value })
+                }
                 type="name"
               />
             </label>
@@ -110,8 +130,13 @@ export default function ModalAddProducts({ show, setClose }) {
               </span>
               <input
                 className="w-full px-3 py-2 rounded-md border border-slate-400"
-                value={productDescription}
-                onChange={e => setproductDescription(e.target.value)}
+                value={newProduct.productDescription}
+                onChange={e =>
+                  setNewProduct({
+                    ...newProduct,
+                    productDescription: e.target.value,
+                  })
+                }
                 type="name"
               />
             </label>
@@ -121,8 +146,10 @@ export default function ModalAddProducts({ show, setClose }) {
               </span>
               <input
                 className="w-full px-3 py-2 rounded-md border border-slate-400"
-                value={productPrice}
-                onChange={e => setproductPrice(e.target.value)}
+                value={newProduct.productPrice}
+                onChange={e =>
+                  setNewProduct({ ...newProduct, productPrice: e.target.value })
+                }
                 type="name"
               />
             </label>
@@ -132,12 +159,18 @@ export default function ModalAddProducts({ show, setClose }) {
               </span>
               <input
                 className="w-full px-3 py-2 rounded-md border border-slate-400"
-                value={productQuantity}
-                onChange={e => setProductQuantity(e.target.value)}
+                value={newProduct.productQuantity}
+                onChange={e =>
+                  setNewProduct({
+                    ...newProduct,
+                    productQuantity: e.target.value,
+                  })
+                }
                 type="name"
               />
             </label>
             <button
+              onClick={handleOnclick}
               type="submit"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >

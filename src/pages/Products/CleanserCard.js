@@ -28,7 +28,7 @@ export default function CleanserCard({
       <div class="w-60 h-80 p-5 rounded-xl  bg-white max-w-sm ">
         <img
           class="z-index-[-10] h-40 w-40 flex justify-center  rounded-lg   "
-          src={productPicture ?? CleanserPic}
+          src={productPicture || CleanserPic}
           alt="cleanser01"
         />
       </div>

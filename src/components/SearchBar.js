@@ -5,11 +5,16 @@ import { Link } from 'react-router-dom';
 import MenuBar from '../components/MenuBar';
 import { useContext, useState } from 'react';
 import React from 'react';
+import useOrder from '../hooks/useOrder';
 // import { ProductContext } from '../../contexts/ProductContext';
 // import Dropdown from '../layouts/Dropdown';
 
-export default function SearchBar(props) {
+export default function SearchBar() {
   const [showDropdown, setShowDropDown] = useState(false);
+  const ctx = useOrder();
+  const { order } = ctx;
+  const countorder = order.length;
+  console.log(countorder);
   const [addCart, setAddCart] = useState('');
   const handleClick = () => {
     setAddCart(true);
@@ -137,7 +142,7 @@ export default function SearchBar(props) {
             <ShoppingBagIcon className="h-6 w-6 text-pink-500 mx-3" />
           </Link>
           <div className="absolute -top-2 -right-1.5 bottom-auto left-auto w-6 h-6 py-1 px-1 leading-none text-center whitespace-nowrap align-baseline font-bold bg-pink-500  text-white  text-sm rounded-full">
-            {props.countCartItems}
+            {countorder}
           </div>
         </div>
       </div>

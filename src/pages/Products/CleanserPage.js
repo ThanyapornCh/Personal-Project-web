@@ -24,7 +24,7 @@ export default function CleanserPage() {
           return (
             <CleanserCard
               name={el.productName}
-              descricptions={el.productDescription}
+              // descriptions={el.productDescription}
               productPicture={el.productImage}
               key={el.id}
               id={el.id}

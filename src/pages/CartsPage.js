@@ -8,10 +8,10 @@ export default function CartsPage() {
   return (
     <>
       <HeaderCart />
-      <form>
-        <CartOrders />
-        {/* <CartTotal /> */}
-      </form>
+
+      <CartOrders />
+      {/* <CartTotal /> */}
+
       <FooterUser />
     </>
   );

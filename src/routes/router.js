@@ -12,6 +12,8 @@ import PaymentPage from '../pages/PaymentPage';
 import CleanserPage from '../pages/Products/CleanserPage';
 import CartsAdminPage from '../pages/CartsAdminPage';
 import RedirectIfAuthenticate from '../features/Auth/RedirectIfAuthenticate';
+import ProtectedRoute from '../features/Auth/ProtectedRoute';
+import SlipPage from '../pages/SlipPage';
 
 const router = createBrowserRouter([
   {
@@ -22,10 +24,13 @@ const router = createBrowserRouter([
       </RedirectIfAuthenticate>
     ),
   },
-  {
-    path: '/signup',
-    element: <SignUpPage />,
-  },
+  // {
+  // element: (
+  //   <ProtectedRoute>
+  //     <AuthLayout />
+  //   </ProtectedRoute>
+  // ),
+  // children: [
 
   {
     path: '/datapersonal',
@@ -72,6 +77,16 @@ const router = createBrowserRouter([
     path: '/cartadminpage',
     element: <CartsAdminPage />,
   },
+  {
+    path: '/paymentpage',
+    element: <PaymentPage />,
+  },
+  {
+    path: '/slippage',
+    element: <SlipPage />,
+  },
+  // ]
+  // },
 ]);
 
 export default function Router() {
