@@ -72,7 +72,7 @@ export default function DataPersonalPage() {
           <h1 className="text-center text-3xl text-black">Skin Types</h1>
           <button
             onClick={checkRadio}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               types.drySkin
                 ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
@@ -86,7 +86,7 @@ export default function DataPersonalPage() {
 
           <button
             onClick={checkRadio}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               types.combinationSkin
                 ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
@@ -99,7 +99,7 @@ export default function DataPersonalPage() {
           </button>
           <button
             onClick={checkRadio}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               types.oilySkin
                 ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
@@ -112,7 +112,7 @@ export default function DataPersonalPage() {
           </button>
           <button
             onClick={checkRadio}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               types.sensitiveSkin
                 ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
@@ -132,7 +132,7 @@ export default function DataPersonalPage() {
       >
         <form className="flex justify-center p-10">
           <span
-            className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-white text-3xl  box-border md:box-content duration-300 ease-in"
+            className=" flex justify-center m-3xl rounded-3xl px-10 py-2  text-black text-3xl  box-border md:box-content duration-300 ease-in"
             type="submit"
           >
             Check Skin Types
@@ -148,7 +148,7 @@ export default function DataPersonalPage() {
           <button
             name="acne"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
             type="button"
           >
@@ -158,11 +158,11 @@ export default function DataPersonalPage() {
           <button
             name="melasma"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
-            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
+            hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md  ${
               problems.melasma
-                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? 'text-white hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in'
+                : 'bg-white'
             }`}
             type="button"
           >
@@ -171,11 +171,11 @@ export default function DataPersonalPage() {
           <button
             name="blemish"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               problems.blemish
-                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+                : 'bg-white text-black'
             }`}
             type="button"
           >
@@ -184,11 +184,11 @@ export default function DataPersonalPage() {
           <button
             name="wrinklespore"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               problems.wrinklespore
-                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+                : 'bg-white text-black'
             }`}
             type="button"
           >
@@ -197,11 +197,11 @@ export default function DataPersonalPage() {
           <button
             name="darkCircles"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               problems.darkCircles
-                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+                : 'bg-white text-black'
             }`}
             type="button"
           >
@@ -210,11 +210,11 @@ export default function DataPersonalPage() {
           <button
             name="pore"
             onClick={handleClickProblem}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               problems.pore
-                ? ' bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? ' bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+                : 'bg-white text-black'
             }`}
             type="button"
           >
@@ -245,11 +245,11 @@ export default function DataPersonalPage() {
           <button
             name="facialCleanser"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
               products.facialCleanser
-                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-                : 'bg-pink-600'
+                ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+                : 'bg-white text-black'
             }`}
             type="button"
           >
@@ -259,11 +259,11 @@ export default function DataPersonalPage() {
           <button
             name="serum"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
             products.serum
-              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-              : 'bg-pink-600'
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+              : 'bg-white text-black'
           }`}
             type="button"
           >
@@ -272,11 +272,11 @@ export default function DataPersonalPage() {
           <button
             name="moisturizer"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black 
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
             products.moisturizer
-              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-              : 'bg-pink-600'
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+              : 'bg-white text-black'
           }`}
             type="button"
           >
@@ -285,11 +285,11 @@ export default function DataPersonalPage() {
           <button
             name="sunscreen"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
             products.sunscreen
-              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-              : 'bg-pink-600'
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+              : 'bg-white text-black'
           }`}
             type="button"
           >
@@ -298,11 +298,11 @@ export default function DataPersonalPage() {
           <button
             name="sleepingMask"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
             products.sleepingMask
-              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-              : 'bg-pink-600'
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white'
+              : 'bg-white text-black'
           }`}
             type="button"
           >
@@ -311,11 +311,11 @@ export default function DataPersonalPage() {
           <button
             name="eyeCream"
             onClick={handleClickProduct}
-            className={`w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
+            className={`w-full rounded-3xl px-10 py-2 bg-white text-black
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in ${
             products.eyeCream
-              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md '
-              : 'bg-pink-600'
+              ? 'bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-md text-white '
+              : 'bg-white text-black'
           }`}
             type="button"
           >

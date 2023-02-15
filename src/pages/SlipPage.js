@@ -41,7 +41,7 @@ export default function PaymentPage() {
         <button
           type="button"
           className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
-          onClick={() => alert('')}
+          onClick={() => alert('Confirm Order')}
         >
           Confirm Order
         </button>

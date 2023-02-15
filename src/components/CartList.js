@@ -6,8 +6,16 @@ import useOrder from '../hooks/useOrder';
 
 export default function CartList({ orderList }) {
   console.log(orderList);
-  const [count, setCount] = useState(0);
+
   // const { ordersId, ProductId } = useParams();
+
+  // const initialValue = 0;
+  // const totalPrice = .reduce(
+  //   (productPrice, el) => productPrice + el.price,
+  //   initialValue
+  // );
+  // console.log(totalPrice);
+
   const ctx = useOrder();
   const { order, setOrder, fetchOrder, handleUpdateCart } = ctx;
   console.log(ctx);

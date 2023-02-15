@@ -1,5 +1,4 @@
 import FooterUser from '../../components/FooterUser';
-// import SearchBar from '../../components/SearchBar';
 import CleanserPic from '../../assets/images/cleanser.png';
 import CleanserCard from './CleanserCard';
 import useProduct from '../../hooks/useProduct';
@@ -24,7 +23,6 @@ export default function CleanserPage() {
           return (
             <CleanserCard
               name={el.productName}
-              // descriptions={el.productDescription}
               productPicture={el.productImage}
               key={el.id}
               id={el.id}
@@ -34,3 +32,5 @@ export default function CleanserPage() {
     </div>
   );
 }
+
+// descriptions={el.productDescription}

@@ -36,10 +36,11 @@ export default function CleanserCard({
         <h5 class="text-gray-900  text-lg font-medium mb-2">{name}</h5>
         <p class="text-gray-700 text-sm mb-4">{descriptions}</p>
         <div className="flex flex-wrap gap-9">
-          <button className="transition ease-in-out delay-200 justify-center p-2 mx-2 bg-gradient-to-br from-purple-500 to-pink-500 hover:drop-shadow-md duration-300  text-white bold-3  rounded-full shadow-xl  text-sm ">
-            Buy Now
-          </button>
-
+          <Link to={{ pathname: '/paymentpage' }}>
+            <button className="transition ease-in-out delay-200 justify-center p-2 mx-2 bg-gradient-to-br from-purple-500 to-pink-500 hover:drop-shadow-md duration-300  text-white bold-3  rounded-full shadow-xl  text-sm ">
+              Buy Now
+            </button>
+          </Link>
           <button
             onClick={handleClick}
             className="transition ease-in-out delay-200 justify-center p-2 mx-2 bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300  text-white bold-3  rounded-full  shadow-xl  text-sm "

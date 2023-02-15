@@ -14,8 +14,6 @@ export default function ModalAddProducts({ show, setClose }) {
   const [productQuantity, setProductQuantity] = useState('');
   const [productImage, setProductImage] = useState(null);
 
-  console.log('first');
-
   const navigate = useNavigate();
 
   const handleSubmitForm = async e => {

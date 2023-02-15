@@ -12,8 +12,6 @@ export default function ModalEditProducts({ show, setClose }) {
   const [productQuantity, setProductQuantity] = useState('');
   const [productImage, setProductImage] = useState(null);
 
-  console.log('first');
-
   const handleSubmitForm = async e => {
     e.preventDefault();
     console.log(

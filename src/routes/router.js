@@ -6,14 +6,15 @@ import HomePage from '../pages/HomePage';
 import UserPage from '../pages/UserPage';
 import MenuBar from '../components/MenuBar';
 import ProductsPage from '../pages/ProductsPage';
-import ProfilePage from '../pages/ProfilePage';
 import CartsPage from '../pages/CartsPage';
 import PaymentPage from '../pages/PaymentPage';
 import CleanserPage from '../pages/Products/CleanserPage';
-import CartsAdminPage from '../pages/CartsAdminPage';
+import CartsAdminPage from '../pages/admin/CartsAdminPage';
 import RedirectIfAuthenticate from '../features/Auth/RedirectIfAuthenticate';
 import ProtectedRoute from '../features/Auth/ProtectedRoute';
 import SlipPage from '../pages/SlipPage';
+import AdminPage from '../pages/admin/AdminPage';
+import SignupPage from '../pages/SignupPage';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
   // ),
   // children: [
 
+  {
+    path: '/signup',
+    element: <SignupPage />,
+  },
+  {
+    path: '/userpage',
+    element: <UserPage />,
+  },
   {
     path: '/datapersonal',
     element: <DataPersonalPage />,
@@ -58,11 +67,6 @@ const router = createBrowserRouter([
     path: '/cleanser',
     element: <CleanserPage />,
   },
-
-  {
-    path: '/profilepage',
-    element: <ProfilePage />,
-  },
   {
     path: '/cartspage',
     element: <CartsPage />,
@@ -84,6 +88,10 @@ const router = createBrowserRouter([
   {
     path: '/slippage',
     element: <SlipPage />,
+  },
+  {
+    path: '/adminpage',
+    element: <AdminPage />,
   },
   // ]
   // },

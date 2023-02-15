@@ -2,13 +2,29 @@ import CleanserPic from '../assets/images/cleanser.png';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
 import ProductList from './ProductList';
 import ModalAddProducts from './ModalAddProducts';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getAllProductApi } from '../apis/product-api';
 
 export default function CartOrdersAdmin() {
+  // const ctx = useOrder();
+  // const { order } = ctx;
+  // console.log(ctx);
+
   const [show, setShow] = useState(false);
+  const [product, setProduct] = useState([]);
   const handleClick = () => {
     setShow(true);
   };
+
+  const fetchProduct = async () => {
+    const res = await getAllProductApi();
+    setProduct(res.data.products);
+  };
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
   const list = [
     { name: 'cleanser', price: '100', quantity: 5 },
     { name: 'larniage', price: '150', quantity: 9 },
@@ -61,12 +77,15 @@ export default function CartOrdersAdmin() {
                 </tr>
               </thead>
               <tbody>
-                {list.map((item, index) => (
+                {product.map((item, index, idx) => (
                   <ProductList
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    quantity={item.quantity}
+                    key={item.id}
+                    index={index}
+                    id={item.productId}
+                    name={item.productName}
+                    price={item.productPrice}
+                    image={item.productImage}
+                    quantity={item.productQuantity}
                   />
                 ))}
               </tbody>

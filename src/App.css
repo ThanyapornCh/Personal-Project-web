@@ -46,6 +46,13 @@
     rgba(246, 65, 108, 1) 63%
   );
 }
+.container-mobile {
+  margin: auto;
+  height: 852px;
+  max-width: 393px;
+  width: 100%;
+  background-color: #576a9c;
+}
 
 .App-link {
   color: #61dafb;
