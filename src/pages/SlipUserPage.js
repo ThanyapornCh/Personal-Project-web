@@ -1,7 +1,14 @@
 import FooterUser from '../components/FooterUser';
 import HeaderCart from '../layouts/HeaderCart';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 export default function PaymentPage() {
+  const handleOnClick = async e => {
+    e.preventDefault();
+    toast.success('Purchase Success');
+  };
+
   return (
     <>
       <HeaderCart />
@@ -38,13 +45,15 @@ export default function PaymentPage() {
             <input id="dropzone-file" type="file" class="hidden" />
           </label>
         </div>
-        <button
-          type="button"
-          className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
-          onClick={() => alert('Confirm Order')}
-        >
-          Confirm Order
-        </button>
+        <Link to={{ pathname: '/orderstatus' }}>
+          <button
+            type="submit"
+            className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
+            onClick={handleOnClick}
+          >
+            Confirm Order
+          </button>
+        </Link>
       </div>
       <FooterUser />
     </>

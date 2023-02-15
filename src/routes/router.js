@@ -12,9 +12,10 @@ import CleanserPage from '../pages/Products/CleanserPage';
 import CartsAdminPage from '../pages/admin/CartsAdminPage';
 import RedirectIfAuthenticate from '../features/Auth/RedirectIfAuthenticate';
 import ProtectedRoute from '../features/Auth/ProtectedRoute';
-import SlipPage from '../pages/SlipPage';
+import SlipUserPage from '../pages/SlipUserPage';
 import AdminPage from '../pages/admin/AdminPage';
 import SignupPage from '../pages/SignupPage';
+import OrderStatusPage from '../pages/OrderStatusPage';
 
 const router = createBrowserRouter([
   {
@@ -86,12 +87,16 @@ const router = createBrowserRouter([
     element: <PaymentPage />,
   },
   {
-    path: '/slippage',
-    element: <SlipPage />,
+    path: '/slipuserpage',
+    element: <SlipUserPage />,
   },
   {
     path: '/adminpage',
     element: <AdminPage />,
+  },
+  {
+    path: '/orderstatus',
+    element: <OrderStatusPage />,
   },
   // ]
   // },

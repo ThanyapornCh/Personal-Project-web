@@ -11,7 +11,7 @@ export default function PaymentPage() {
         <div className="flex items-center justify-center w-full">
           <img className="w-[250] h-[300]" src={qrCode} />
         </div>
-        <Link to={{ pathname: '/slippage' }}>
+        <Link to={{ pathname: '/slipuserpage' }}>
           <button
             type="save"
             className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"

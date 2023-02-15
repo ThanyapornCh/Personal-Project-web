@@ -12,7 +12,7 @@ export default function CartOrders() {
   const ctx = useOrder();
 
   const { order } = ctx;
-  console.log(ctx);
+  console.log(order);
 
   const handleInputChange = input => e => {
     e.preventDefault();
@@ -20,6 +20,20 @@ export default function CartOrders() {
   };
   // const navigate = useNavigate();
   // navigate('/paymentpage');
+
+  function calTotal(lists) {
+    let totalPrice = 0;
+    for (let product of lists) {
+      let price = Number(product.Product.productPrice);
+      let quantity = product.productQuantity;
+      totalPrice += price * quantity;
+      console.log(price, quantity);
+    }
+    return totalPrice;
+    console.log(totalPrice);
+  }
+
+  let total = calTotal(order);
 
   return (
     <div className="flex flex-col">
@@ -84,6 +98,7 @@ export default function CartOrders() {
                 <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
                   Total
                 </h5>
+                <p>{total}</p>
                 <div className="col-1 text-right"></div>
                 <Link to={{ pathname: '/paymentpage' }}>
                   <button

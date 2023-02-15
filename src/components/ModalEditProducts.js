@@ -3,13 +3,21 @@ import {
   createProductApi,
   getAllBrandApi,
   getAllCategoriesApi,
+  updateProductApi,
 } from '../apis/product-api';
 
-export default function ModalEditProducts({ show, setClose }) {
-  const [productName, setProductName] = useState('');
-  const [productPrice, setproductPrice] = useState('');
+export default function ModalEditProducts({
+  show,
+  setClose,
+  name,
+  price,
+  image,
+  quantity,
+}) {
+  const [productName, setProductName] = useState(name);
+  const [productPrice, setproductPrice] = useState(price);
   const [productDescription, setproductDescription] = useState('');
-  const [productQuantity, setProductQuantity] = useState('');
+  const [productQuantity, setProductQuantity] = useState(quantity);
   const [productImage, setProductImage] = useState(null);
 
   const handleSubmitForm = async e => {
@@ -28,7 +36,7 @@ export default function ModalEditProducts({ show, setClose }) {
       formData.append('productName', productName);
       formData.append('productPrice', productPrice);
       formData.append('productDescription', productDescription);
-      const res = await createProductApi(formData);
+      const res = await updateProductApi(formData);
       console.log(res.data);
     }
   };
@@ -48,12 +56,12 @@ export default function ModalEditProducts({ show, setClose }) {
 
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.3)] ${
+      className={`w-screen h-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.3)] flex justify-center items-center ${
         show ? ' block ' : ' hidden '
       }`}
       onClick={() => setClose(false)}
     >
-      <div className="w-full h-full flex justify-center items-center">
+      <div className=" flex justify-center items-center">
         <div
           onClick={e => e.stopPropagation()}
           className="block p-6 rounded-lg shadow-lg bg-white max-w-xl"
@@ -71,8 +79,8 @@ export default function ModalEditProducts({ show, setClose }) {
               Image
             </label>
             <input
-              onChange={e => setProductImage(e.target.value)}
-              value={productImage}
+              onChange={e => setProductImage(e.target.files[0])}
+              // value={productImage}
               className="form-control
     block
     w-full
@@ -96,36 +104,36 @@ export default function ModalEditProducts({ show, setClose }) {
                 Name
               </span>
               <input
-                className="w-full px-3 py-2 rounded-md border border-slate-400"
+                className="w-full text-black px-3 py-2 rounded-md border border-slate-400"
                 value={productName}
                 onChange={e => setProductName(e.target.value)}
                 type="name"
               />
             </label>
-            <label className="block">
-              <span className="block text-sm font-medium mb-2 text-gray-900 ">
+            {/* <label className="block">
+              <span className="block text-black text-sm font-medium mb-2 text-gray-900 ">
                 Description
               </span>
               <input
-                className="w-full px-3 py-2 rounded-md border border-slate-400"
+                className="w-full px-3 py-2 text-black rounded-md border border-slate-400"
                 value={productDescription}
                 onChange={e => setproductDescription(e.target.value)}
                 type="name"
               />
-            </label>
+            </label> */}
             <label className="block">
               <span className="block text-sm font-medium mb-2 text-gray-900 ">
                 Price
               </span>
               <input
-                className="w-full px-3 py-2 rounded-md border border-slate-400"
+                className="w-full text-black px-3 py-2 rounded-md border border-slate-400"
                 value={productPrice}
                 onChange={e => setproductPrice(e.target.value)}
                 type="name"
               />
             </label>
             <label className="block">
-              <span className="block text-sm font-medium mb-2 text-gray-900 ">
+              <span className="block text-black text-sm font-medium mb-2 text-gray-900 ">
                 Quantity
               </span>
               <input
@@ -136,6 +144,7 @@ export default function ModalEditProducts({ show, setClose }) {
               />
             </label>
             <button
+              onClick={handleSubmitForm}
               type="submit"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
