@@ -4,12 +4,13 @@ import ProductList from './ProductList';
 import ModalAddProducts from './ModalAddProducts';
 import { useEffect, useState } from 'react';
 import { getAllProductApi } from '../apis/product-api';
-
+import ModalEditProducts from './ModalEditProducts';
+import useProduct from '../hooks/useProduct';
 export default function CartOrdersAdmin() {
   // const ctx = useOrder();
   // const { order } = ctx;
   // console.log(ctx);
-
+  const [edit, setEdit] = useState(true);
   const [show, setShow] = useState(false);
   const [product, setProduct] = useState([]);
   const handleClick = () => {
@@ -23,8 +24,8 @@ export default function CartOrdersAdmin() {
 
   useEffect(() => {
     fetchProduct();
-  }, []);
-
+    console.log(edit);
+  }, [edit]);
   const list = [
     { name: 'cleanser', price: '100', quantity: 5 },
     { name: 'larniage', price: '150', quantity: 9 },
@@ -77,15 +78,16 @@ export default function CartOrdersAdmin() {
                 </tr>
               </thead>
               <tbody>
-                {product.map((item, index, idx) => (
+                {product?.map((item, index, idx) => (
                   <ProductList
-                    key={item.id}
                     index={index}
-                    id={item.productId}
+                    id={item.id}
                     name={item.productName}
                     price={item.productPrice}
                     image={item.productImage}
                     quantity={item.productQuantity}
+                    edit={edit}
+                    setEdit={setEdit}
                   />
                 ))}
               </tbody>

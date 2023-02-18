@@ -1,26 +1,38 @@
 import React, { useState } from 'react';
 import CleanserPic from '../assets/images/cleanser.png';
+import * as productApi from '../apis/product-api';
 import useOrder from '../hooks/useOrder';
 import ModalEditProducts from './ModalEditProducts';
-
-export default function ProductList({ index, name, price, quantity, image }) {
+import { useParams } from 'react-router-dom';
+import useProduct from '../hooks/useProduct';
+export default function ProductList({
+  id,
+  name,
+  price,
+  quantity,
+  image,
+  edit,
+  setEdit,
+}) {
   const [show, setShow] = useState(false);
   const handleOnClick = e => {
     e.preventDefault();
     setShow(true);
   };
-  const ctx = useOrder();
-  const { order, setOrder, fetchOrder, handleUpdateCart } = ctx;
-  // const handleClickButton = async (ordersId, productId) => {
-  //   await orderApi.deleteOrder(ordersId, productId);
-  //   fetchOrder();
-  // };
-  // console.log(ordersId);
+  // console.log(id, 'id at prodlist');
+  // const ctx = useOrder();
+
+  // const { productId } = useParams();
+  const handleClickButton = async id => {
+    await productApi.deleteProducts(id);
+    setEdit(!edit);
+  };
+  console.log(id);
 
   return (
     <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-        {index + 1}
+        {id}
       </td>
 
       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
@@ -52,11 +64,12 @@ export default function ProductList({ index, name, price, quantity, image }) {
               quantity={quantity}
               show={show}
               setClose={setShow}
+              id={id}
             />
           </button>
 
           <button
-            onClick={handleOnClick}
+            onClick={() => handleClickButton(id)}
             type="button"
             className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
           >

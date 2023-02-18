@@ -10,7 +10,9 @@ export default function ProductContextProvider({ children }) {
     productPrice: '',
     productDescription: '',
   });
+  const [updateproduct, setUpdateProduct] = useState();
   const [newProductImage, setNewProductImage] = useState(null);
+  const [trigger, setTrigger] = useState(true);
   const formData = new FormData();
   formData.append('productImage', newProductImage);
   formData.append('productName', newProduct.productName);
@@ -35,6 +37,10 @@ export default function ProductContextProvider({ children }) {
     run();
   }, []);
 
+  const handleUpdateProduct = async e => {
+    await axios.post('/products/updateProducts', formData);
+  };
+
   function addProduct() {}
   // console.log(products);
 
@@ -51,6 +57,11 @@ export default function ProductContextProvider({ children }) {
         newProductImage,
         setNewProductImage,
         handleCreate,
+        updateproduct,
+        setUpdateProduct,
+        handleUpdateProduct,
+        trigger,
+        setTrigger,
       }}
     >
       {children}
