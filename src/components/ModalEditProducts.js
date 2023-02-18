@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   createProductApi,
   getAllBrandApi,
   getAllCategoriesApi,
   updateProductApi,
 } from '../apis/product-api';
+import useProduct from '../hooks/useProduct';
 
 export default function ModalEditProducts({
   show,
@@ -19,18 +21,19 @@ export default function ModalEditProducts({
   const [productDescription, setproductDescription] = useState('');
   const [productQuantity, setProductQuantity] = useState(quantity);
   const [productImage, setProductImage] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmitForm = async e => {
-    e.preventDefault();
-    console.log(
-      productImage,
-      productName,
-      productDescription,
-      productPrice,
-      productQuantity
-    );
-
+    // console.log(
+    //   productImage,
+    //   productName,
+    //   productDescription,
+    //   productPrice,
+    //   productQuantity
+    // );
+    console.log('sard');
     if (productImage) {
+      console.log('yo');
       const formData = new FormData();
       formData.append('productImage', productImage);
       formData.append('productName', productName);
@@ -54,6 +57,13 @@ export default function ModalEditProducts({
   const [allBrand, setAllBrand] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
 
+  const { handleCreate } = useProduct();
+
+  const handleOnClick = () => {
+    handleSubmitForm();
+    navigate('/cartadminpage');
+  };
+
   return (
     <div
       className={`w-screen h-screen fixed top-0 left-0 bg-[rgba(0,0,0,0.3)] flex justify-center items-center ${
@@ -66,7 +76,7 @@ export default function ModalEditProducts({
           onClick={e => e.stopPropagation()}
           className="block p-6 rounded-lg shadow-lg bg-white max-w-xl"
         >
-          <form onSubmit={handleSubmitForm}>
+          <div>
             <select>
               {allBrand?.map(el => (
                 <option>{el.productName}</option>
@@ -110,8 +120,8 @@ export default function ModalEditProducts({
                 type="name"
               />
             </label>
-            {/* <label className="block">
-              <span className="block text-black text-sm font-medium mb-2 text-gray-900 ">
+            <label className="block">
+              <span className="block text-sm font-medium mb-2 text-gray-900 ">
                 Description
               </span>
               <input
@@ -120,7 +130,7 @@ export default function ModalEditProducts({
                 onChange={e => setproductDescription(e.target.value)}
                 type="name"
               />
-            </label> */}
+            </label>
             <label className="block">
               <span className="block text-sm font-medium mb-2 text-gray-900 ">
                 Price
@@ -133,24 +143,24 @@ export default function ModalEditProducts({
               />
             </label>
             <label className="block">
-              <span className="block text-black text-sm font-medium mb-2 text-gray-900 ">
+              <span className="block  text-sm font-medium mb-2 text-gray-900 ">
                 Quantity
               </span>
               <input
-                className="w-full px-3 py-2 rounded-md border border-slate-400"
+                className="w-full  text-black px-3 py-2 rounded-md border border-slate-400"
                 value={productQuantity}
                 onChange={e => setProductQuantity(e.target.value)}
                 type="name"
               />
             </label>
             <button
-              onClick={handleSubmitForm}
+              onClick={handleOnClick}
               type="submit"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
               Confirm
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
