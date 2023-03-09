@@ -1,6 +1,6 @@
 import { Sidebar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
+import SearchBar from './Header';
 // import { MagnifyingGlass } from 'flowbite-react';
 
 export default function CategoriesPage() {

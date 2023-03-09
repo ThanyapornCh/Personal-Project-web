@@ -91,21 +91,7 @@ export default function ModalAddProducts({ show, setClose }) {
             <input
               onChange={e => setNewProductImage(e.target.files[0])}
               value={productImage}
-              className="form-control
-    block
-    w-full
-    px-3
-    py-1.5
-    text-base
-    font-normal
-    text-blue-700
-    bg-white bg-clip-padding
-    border border-solid border-gray-300
-    rounded-lg
-    transition
-    ease-in-out
-    m-0
-    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className="form-control block w-full px-3    py-1.5    text-base   font-normal    text-blue-700   bg-white bg-clip-padding   border border-solid border-gray-300   rounded-lg   transition ease-in-out   m-0   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               type="file"
               id="formFile"
             />

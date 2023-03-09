@@ -1,7 +1,7 @@
 import { Carousel } from 'flowbite-react';
 // import { Card } from 'flowbite-react';
 import FooterUser from '../components/FooterUser';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/Header';
 import bg01Pic from '../assets/images/bg01.png';
 import bg02Pic from '../assets/images/bg02.png';
 import bg03Pic from '../assets/images/bg03.png';
@@ -15,7 +15,7 @@ export default function Homepage() {
   return (
     <>
       <SearchBar />
-      <div className="h-auto w-screen mt-4 flex flex-col gap-10">
+      <div className="max-w-md mt-4 flex flex-col gap-10 flex justify-center">
         <div className="h-100 w-full">
           <Carousel className="h-56 w-full">
             <img src={bg01Pic} alt="..." className="h-56 w-full object-cover" />

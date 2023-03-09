@@ -8,18 +8,22 @@ export default function HeaderCart() {
   const countorder = order.length;
   console.log(countorder);
   return (
-    <nav className="sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
-      <form className="flex items-center my-2 ">
-        <Link to={{ pathname: '/homepage' }}>
+    <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-7  max-w-md pt-2 ">
+      <form className="flex justify-between my-2 ">
+        {/* <Link to={{ pathname: '/homepage' }}>
           <button>
             <ChevronLeftIcon className="h-8 w-8 text-pink mx-3" />
           </button>
+        </Link> */}
+        <Link to={{ pathname: '/homepage' }}>
+          <h4 className="text-pink font-bold ">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500">
+              LALA
+              <br />
+              Shop
+            </span>
+          </h4>
         </Link>
-        <h4 className="text-pink font-bold ">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500">
-            LALA Shop
-          </span>
-        </h4>
         <div className="rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
           Add To Cart
         </div>

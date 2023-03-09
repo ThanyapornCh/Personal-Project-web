@@ -42,26 +42,29 @@ export default function LoginForm() {
           id="email"
         />
       </label>
-      <label className="block">
-        <span className="block text-sm font-medium text-slate-700">
-          Password
-        </span>
-
-        <input
-          className="w-full px-3 py-2 rounded-md border border-slate-400"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          name="password"
-          id="password"
-        />
-      </label>
+      <br />
       <div>
+        <label className="block">
+          <span className="block text-sm font-medium text-slate-700">
+            Password
+          </span>
+          <input
+            className="w-full px-3 py-2 rounded-md border border-slate-400"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            name="password"
+            id="password"
+          />
+        </label>
         <input type="checkbox" name="remember" id="remember" />
-        <label className="text-sm text-black font-light" for="remember">
+        <label className="text-sm text-black font-light mr-2" for="remember">
           Remember me
         </label>
+      </div>
+      <br />
+      <div>
         <button
           className="w-full rounded-3xl px-10 py-2 bg-pink-600 text-white 
   hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in"
@@ -69,6 +72,14 @@ export default function LoginForm() {
         >
           Sign In
         </button>
+        <p className="text-right">
+          <a
+            className="text-blue-600 text-sm font-light hover:underline"
+            href="https://www.google.com"
+          >
+            Forget Password?
+          </a>
+        </p>
       </div>
     </form>
   );

@@ -17,23 +17,30 @@ export default function LoginPage() {
 
           <div className="max-w-sm mx-auto p-10 bg-white rounded-xl drop-shadow-lg space-y-5 m-md">
             <div className="flex justify-center">
-              <img
+              {/* <img
                 className="flex justify-center object-cover"
                 src={lllLogo}
                 width="60px"
-              />
+              /> */}
+              <h4 className="text-pink font-bold flex justify-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 text-2xl">
+                  LALA
+                  <br />
+                  Shop
+                </span>
+              </h4>
             </div>
 
             <LoginForm />
 
-            <p className="text-right">
+            {/* <p className="text-right">
               <a
                 className="text-blue-600 text-sm font-light hover:underline"
                 href="https://www.google.com"
               >
                 Forget Password?
               </a>
-            </p>
+            </p> */}
             {/* </div> */}
           </div>
           {/* <CreateNewForm /> */}

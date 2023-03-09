@@ -6,15 +6,15 @@ export default function UserPage() {
   return (
     <div className="w-screen h-[95vh] flex flex-col justify-between bg-gradient-to-br from-purple-700 to-amber-700">
       {/* <div className="flex flex-col gap-2 flex justify-center "> */}
-      <div className="flex justify-start  mx-15 mt-48  text-white ml-9">
+      <div className="flex justify-start  mx-15 mt-28  text-white ml-9 space-y-2 mb-5 ">
         <Avatar
           img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
           rounded={true}
           bordered={true}
         />
-        Sophia Amber
+        <p className="pl-2"> Sophia Amber</p>
       </div>
-      <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 mx-5 ">
+      <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 mx-5 mb-32 ">
         <div className="justify-center ">
           <div className="flex justify-center ">
             <button className="w-full rounded-full p-2 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">

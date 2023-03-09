@@ -24,17 +24,17 @@ export default function CleanserCard({
   console.log(addCart);
 
   return (
-    <div className="w-[300px] h-[400px] flex flex-col items-center shadow-lg p-3 rounded-lg">
-      <div class="w-60 h-80 p-5 rounded-xl  bg-white max-w-sm ">
+    <div className="w-[300px] flex flex-col items-center shadow-lg p-3 rounded-lg">
+      <div classname="w-40 h-60 p-5 rounded-xl  bg-white max-w-sm ">
         <img
-          class="z-index-[-10] h-40 w-40 flex justify-center  rounded-lg   "
+          classname="z-index-[-10] h-20 w-20 flex justify-center  rounded-lg   "
           src={productPicture || CleanserPic}
           alt="cleanser01"
         />
       </div>
-      <div class="p-2">
-        <h5 class="text-gray-900  text-lg font-medium mb-2">{name}</h5>
-        <p class="text-gray-700 text-sm mb-4">{descriptions}</p>
+      <div classname="p-2">
+        <h5 classname="text-gray-900  text-lg font-medium mb-2">{name}</h5>
+        <p classname="text-gray-700 text-xs mb-4">{descriptions}</p>
         <div className="flex flex-wrap gap-9">
           <Link to={{ pathname: '/paymentpage' }}>
             <button className="transition ease-in-out delay-200 justify-center p-2 mx-2 bg-gradient-to-br from-purple-500 to-pink-500 hover:drop-shadow-md duration-300  text-white bold-3  rounded-full shadow-xl  text-sm ">

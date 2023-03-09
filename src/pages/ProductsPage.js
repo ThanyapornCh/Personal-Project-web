@@ -1,10 +1,10 @@
-import SearchBar from '../components/SearchBar';
+import Header from '../components/Header';
 
 export default function ProductsPage() {
   return (
     <>
       <div className="bg-white">
-        <SearchBar />
+        <Header />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 import { Dropdown } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import MenuBar from '../components/MenuBar';
+import MenuBar from './MenuBar';
 import { useContext, useState } from 'react';
 import React from 'react';
 import useOrder from '../hooks/useOrder';
@@ -23,8 +23,8 @@ export default function SearchBar() {
 
   // const [products, setProducts] = useContext(ProductContext);
   return (
-    <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-10 pl-2">
-      <div className="flex items-center my-2">
+    <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5  pl-2 max-w-md pt-2">
+      <div className="flex justify-between my-2">
         {/* <button
           id="multiLevelDropdownButton"
           data-dropdown-toggle="dropdown"
@@ -33,7 +33,7 @@ export default function SearchBar() {
           <Bars3Icon className="h-8 w-8 text-black mx-3" />
         </button> */}
         {/* <Dropdown />s */}
-        <button>
+        {/* <button>
           <Bars3Icon
             className="h-8 w-8 text-black mx-3"
             onClick={() => setShowDropDown(!showDropdown)}
@@ -74,14 +74,14 @@ export default function SearchBar() {
               </Dropdown.Item>
             </Dropdown>
           )}
-        </button>
+        </button> */}
 
-        <h4 className="text-pink font-bold ">
+        {/* <h4 className="text-pink font-bold ">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500">
             LALA Shop
           </span>
-        </h4>
-        <label for="voice-search" className="sr-only">
+        </h4> */}
+        <label htmlFor="voice-search" className="sr-only">
           Search
         </label>
         <div className="relative w-full">
@@ -116,21 +116,6 @@ export default function SearchBar() {
           className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-pink-600 text-white 
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in rounded-lg "
         >
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 mr-2 -ml-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            ></path>
-          </svg>
           Search
         </button>
 
