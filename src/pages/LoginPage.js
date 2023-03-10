@@ -6,12 +6,12 @@ import LoginForm from '../features/Auth/LoginForm';
 export default function LoginPage() {
   return (
     <div
-      className="w-screen h-screen flex justify-center items-center
+      className="w-screen  flex justify-center items-center
     bg-gradient-to-br from-purple-700 to-amber-700"
     >
       <div className="bg-pink rounded-xl ">
         <span className="flex-center box-decoration-slice w-10  px-2 rounded-5">
-          <h1 className="flex justify-center text-3xl font-bold text-white">
+          <h1 className="flex justify-center text-3xl font-bold text-white mt-14">
             Login
           </h1>
 
@@ -22,7 +22,7 @@ export default function LoginPage() {
                 src={lllLogo}
                 width="60px"
               /> */}
-              <h4 className="text-pink font-bold flex justify-center">
+              <h4 className="text-pink font-bold flex justify-center ">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 text-2xl">
                   LALA
                   <br />
@@ -52,7 +52,7 @@ export default function LoginPage() {
             </Link>
           </div>
         </span>
-        <div className="flex flex-justify-center my-10 mx-20">
+        <div className="flex flex-justify-center mb-10 mx-20">
           <div className="text-4xl text-[#fff] flex-col m-2 p-2">
             <i className="fa-brands fa-facebook" />
           </div>

@@ -64,7 +64,7 @@ export default function RegisterForm({ onClose }) {
           <span className="text-sm font-medium text-slate-700">Firstname</span>
 
           <input
-            className="w-full px-3 py-2 rounded-md border border-slate-400"
+            className="w-full py-2 px-2 rounded-md border border-slate-400"
             type="name"
             placeholder="First name"
             value={input.userName}
@@ -79,7 +79,7 @@ export default function RegisterForm({ onClose }) {
           <span className="text-sm font-medium text-slate-700">Surname</span>
 
           <input
-            className="w-full px-3 py-2 rounded-md border border-slate-400"
+            className="w-full  rounded-md border border-slate-400"
             type="text"
             placeholder="Last name"
             value={input.lastName}
@@ -94,7 +94,7 @@ export default function RegisterForm({ onClose }) {
           Email
         </label>
         <input
-          className="w-96 px-3 py-2 rounded-md border border-slate-400"
+          className="  rounded-md border border-slate-400"
           type="email"
           placeholder="Your Email"
           value={input.email}
@@ -109,7 +109,7 @@ export default function RegisterForm({ onClose }) {
           Password
         </label>
         <input
-          className="w-96 px-3 py-2 rounded-md border border-slate-400"
+          className=" rounded-md border border-slate-400"
           type="password"
           placeholder="Password"
           value={input.password}
@@ -125,7 +125,7 @@ export default function RegisterForm({ onClose }) {
           Confirm Password
         </label>
         <input
-          className="w-96 px-3 py-2 rounded-md border border-slate-400"
+          className="rounded-md border border-slate-400"
           type="password"
           placeholder="Confirm Password"
           value={input.confirmPassword}

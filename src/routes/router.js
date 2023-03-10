@@ -16,6 +16,7 @@ import SlipUserPage from '../pages/SlipUserPage';
 import AdminPage from '../pages/admin/AdminPage';
 import SignupPage from '../pages/SignupPage';
 import OrderStatusPage from '../pages/OrderStatusPage';
+import AdminOrderStatusPage from '../pages/admin/AdminOrderStatusPage';
 
 const router = createBrowserRouter([
   {
@@ -82,10 +83,7 @@ const router = createBrowserRouter([
     path: '/cartadminpage',
     element: <CartsAdminPage />,
   },
-  {
-    path: '/paymentpage',
-    element: <PaymentPage />,
-  },
+  ,
   {
     path: '/slipuserpage',
     element: <SlipUserPage />,
@@ -98,6 +96,11 @@ const router = createBrowserRouter([
     path: '/orderstatus',
     element: <OrderStatusPage />,
   },
+  {
+    path: '/adminorderstatus',
+    element: <AdminOrderStatusPage />,
+  },
+
   // ]
   // },
 ]);

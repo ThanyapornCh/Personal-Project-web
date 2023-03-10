@@ -5,9 +5,8 @@ import useOrder from '../hooks/useOrder';
 export default function HeaderCart() {
   const ctx = useOrder();
   const { order } = ctx;
-
   const countorder = order.length;
-  console.log(countorder, order);
+  console.log(countorder);
   return (
     <nav className="absolute sticky top-0 w-screen backdrop-blur-md bg-white/40 drop-shadow-lg space-y-5 px-7  max-w-md pt-2 ">
       <form className="flex justify-between my-2 ">
