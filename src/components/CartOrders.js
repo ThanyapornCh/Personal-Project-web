@@ -39,7 +39,7 @@ export default function CartOrders() {
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8 mb-56 ">
+        <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8 mb-80 ">
           <div className="overflow-hidden">
             <table className="min-w-full">
               <thead className="bg-white border-b">

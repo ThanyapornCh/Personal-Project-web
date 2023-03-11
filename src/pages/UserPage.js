@@ -22,15 +22,16 @@ export default function UserPage() {
             </button>
           </div>
         </div>
-
-        <div className="flex flex-wrap justify-center ">
-          <button className="w-full rounded-full p-2 m-1 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
-            Order Status
-          </button>
-          {/* <button className="w-full rounded-full p-2 m-1 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
+        <Link to={{ pathname: '/orderstatus' }}>
+          <div className="flex flex-wrap justify-center ">
+            <button className="w-full rounded-full p-2 m-1 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
+              Order Status
+            </button>
+            {/* <button className="w-full rounded-full p-2 m-1 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
             Paid
           </button> */}
-        </div>
+          </div>
+        </Link>
         <div>
           <Link to={{ pathname: '/cartspage' }}>
             <button

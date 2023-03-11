@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function AdminPage() {
   return (
-    <div className="w-screen h-[95vh] flex flex-col justify-between bg-gradient-to-br from-purple-700 to-amber-700">
+    <div className="w-screen  flex flex-col justify-between bg-gradient-to-br from-purple-700 to-amber-700">
       {/* <div className="flex flex-col gap-2 flex justify-center "> */}
-      <div className="flex justify-start  mx-15 mt-36  text-white space-y-2  ml-9">
+      <div className="flex justify-start  mx-15 mt-28  text-white space-y-2  ml-9 mb-5">
         <Avatar
           src="/docs/images/people/profile-picture-2.jpg"
           rounded={true}
@@ -14,9 +14,9 @@ export default function AdminPage() {
         />
         <p className="pl-2">Panny Chame</p>
       </div>
-      <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 mx-5 ">
+      <form className="divide-y divide-slate-200 p-10 bg-white rounded-3xl drop-shadow-lg space-y-5 mx-5 mb-[100px] ">
         <div className="justify-center ">
-          <div className="flex justify-center ">
+          <div>
             <Link to={{ pathname: '/userpage' }}>
               <button className="w-full rounded-full p-2 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
                 Data Users
@@ -25,7 +25,7 @@ export default function AdminPage() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center ">
+        <div>
           {/* <button className="w-full rounded-full p-2 m-1 bg-gradient-to-br from-purple-500 to-pink-400 text-white bold-2 shadow-xl font-medium drop-shadow-xl">
             My Cart
           </button> */}
@@ -43,7 +43,7 @@ export default function AdminPage() {
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
               type="button"
             >
-              Update Product
+              Add Product
             </button>
           </Link>
         </div>
