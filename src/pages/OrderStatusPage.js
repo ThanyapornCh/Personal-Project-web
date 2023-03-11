@@ -6,15 +6,6 @@ import useOrder from '../hooks/useOrder';
 import { useEffect, useState } from 'react';
 
 export default function OrderStatusPage() {
-  // const [order,setOrder] = useState()
-  // const fetchOrder = async () => {
-  //   const res = await getAllBillApi()
-  //   setOrder(res.data)
-  // }
-  // const ctx = useOrder();
-
-  // const { order } = ctx;
-  // console.log(order);
   const [billOrder, setBillOrder] = useState();
   useEffect(() => {
     const getSlipPayment = async () => {
@@ -71,15 +62,15 @@ export default function OrderStatusPage() {
               <tr>
                 <th
                   scope="col"
-                  className="text-sm font-medium text-gray-900 pr-16 py-2 text-left"
+                  className="text-sm font-medium text-gray-900 pr-48 py-2 text-left"
                 >
-                  Product Name
+                  Total
                 </th>
                 <th
                   scope="col"
                   className="text-sm font-medium text-gray-900 pl-6 py-2 text-left"
                 >
-                  Product Price
+                  Price
                 </th>
               </tr>
             </thead>
@@ -97,8 +88,8 @@ export default function OrderStatusPage() {
                 <td className="pr-32 py-2  text-sm text-blue-700 hover:underline dark:text-blue-500">
                   Total Price:
                 </td>
-                <td className="pl-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
-                  {/* {total} */}123 B
+                <td className="py-2 whitespace-nowrap text-sm font-medium text-gray-900">
+                  THB {billOrder.totalPrice}
                 </td>
               </tr>
             </tbody>

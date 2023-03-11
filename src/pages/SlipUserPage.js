@@ -33,7 +33,7 @@ export default function PaymentPage() {
       <HeaderCart />
       <form onSubmit={handleSubmitForm}>
         <div className="justify col w-full">
-          <div class="flex items-center justify-center  ">
+          <div className="flex items-center justify-center  ">
             <div className="flex-col m-10 ">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 flex justify-center text-2xl font-bold">
                 Payment
