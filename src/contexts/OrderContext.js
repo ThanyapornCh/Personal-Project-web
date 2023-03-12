@@ -9,7 +9,7 @@ export default function OrderContextProvider({ children }) {
     const res = await axios.get('/order/');
     console.log(res.data.orders.OrderItems);
     // const intOrder = res.data?.OrderItems;
-    setOrder(res.data.orders.OrderItems);
+    setOrder(res.data?.orders.OrderItems);
   };
   useEffect(() => {
     fetchOrder();
