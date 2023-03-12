@@ -13,6 +13,7 @@ export default function ProductContextProvider({ children }) {
   const [updateproduct, setUpdateProduct] = useState();
   const [newProductImage, setNewProductImage] = useState(null);
   const [trigger, setTrigger] = useState(true);
+  const [word, setWord] = useState('');
   const formData = new FormData();
   formData.append('productImage', newProductImage);
   formData.append('productName', newProduct.productName);
@@ -62,6 +63,8 @@ export default function ProductContextProvider({ children }) {
         handleUpdateProduct,
         trigger,
         setTrigger,
+        word,
+        setWord,
       }}
     >
       {children}

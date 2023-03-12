@@ -61,7 +61,7 @@ export default function ModalAddProducts({ show, setClose }) {
 
   const handleOnclick = () => {
     handleCreate();
-    navigate('/homepage');
+    navigate('/cartadminpage');
   };
 
   return (
@@ -155,7 +155,7 @@ export default function ModalAddProducts({ show, setClose }) {
             </label>
             <button
               onClick={handleOnclick}
-              type="submit"
+              type="button"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
               Update

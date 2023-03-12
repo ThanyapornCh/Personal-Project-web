@@ -6,13 +6,19 @@ import MenuBar from './MenuBar';
 import { useContext, useState } from 'react';
 import React from 'react';
 import useOrder from '../hooks/useOrder';
+import useProduct from '../hooks/useProduct';
+import { useNavigate } from 'react-router-dom';
 // import { ProductContext } from '../../contexts/ProductContext';
 // import Dropdown from '../layouts/Dropdown';
 
 export default function SearchBar() {
+  const navigate = useNavigate();
   const [showDropdown, setShowDropDown] = useState(false);
   const ctx = useOrder();
+
   const { order } = ctx;
+  const { word, setWord } = useProduct();
+
   const countorder = order.length;
   console.log(countorder);
   const [addCart, setAddCart] = useState('');
@@ -101,8 +107,10 @@ export default function SearchBar() {
             </svg>
           </div>
           <input
-            type="text"
-            id="voice-search"
+            type="search"
+            value={word}
+            onChange={e => setWord(e.target.value)}
+            id="search-input"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Enter your keyword to search"
           />
@@ -112,7 +120,9 @@ export default function SearchBar() {
           ></button>
         </div>
         <button
-          type="submit"
+          type="button"
+          id="search"
+          onClick={navigate('/searchhomes')}
           className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-pink-600 text-white 
           hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in rounded-lg "
         >

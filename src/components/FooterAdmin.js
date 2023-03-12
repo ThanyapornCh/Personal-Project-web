@@ -13,15 +13,15 @@ export default function FooterUser() {
     <footer
       className="fixed w-full h-16 bg-white border-t-2 border-white
               sticky left-0 bottom-0 right-0
-               grid justify-items-stretch h-[6vh]
-              text-2xl px-3"
+               grid justify-items-stretch 
+              text-2xl px-5"
     >
-      <div className="flex justify-between">
-        <Link to={{ pathname: '/homepage' }}>
+      <div className="flex justify-between px-10">
+        {/* <Link to={{ pathname: '/homepage' }}>
           <button className="flex-col m-2 p-2 text-3xl ">
             <HomeIcon className="h-8 w-8 text-purple-500 mx-3" />
           </button>
-        </Link>
+        </Link> */}
         <Link to={{ pathname: '/cartadminpage' }}>
           <button className="flex-col m-2 p-2 text-3xl ">
             <ShoppingBagIcon className="h-8 w-8 text-purple-500 mx-3" />

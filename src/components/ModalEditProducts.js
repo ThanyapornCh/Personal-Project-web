@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import {
   createProductApi,
@@ -22,7 +23,7 @@ export default function ModalEditProducts({
   const [productQuantity, setProductQuantity] = useState(quantity);
   const [productImage, setProductImage] = useState(null);
   const [producId, setProductId] = useState(id);
-
+  const navigate = useNavigate();
   const handleSubmitForm = async e => {
     // console.log(
     //   productImage,
@@ -31,9 +32,9 @@ export default function ModalEditProducts({
     //   productPrice,
     //   productQuantity
     // );
-    console.log('sard');
+    console.log('success');
     if (productImage) {
-      console.log('yo');
+      console.log('ok');
       const formData = new FormData();
       formData.append('productImage', productImage);
       formData.append('productName', productName);
@@ -43,6 +44,7 @@ export default function ModalEditProducts({
       const res = await updateProductApi(formData);
       console.log(res.data);
     }
+    navigate('/cartadminpage');
   };
   useEffect(() => {
     const api = async () => {
@@ -90,22 +92,7 @@ export default function ModalEditProducts({
             </label>
             <input
               onChange={e => setProductImage(e.target.files[0])}
-              // value={productImage}
-              className="form-control
-    block
-    w-full
-    px-3
-    py-1.5
-    text-base
-    font-normal
-    text-blue-700
-    bg-white bg-clip-padding
-    border border-solid border-gray-300
-    rounded-lg
-    transition
-    ease-in-out
-    m-0
-    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className="form-control    block    w-full    px-3    py-1.5    text-base    font-normal    text-blue-700    bg-white bg-clip-padding    border border-solid border-gray-300    rounded-lg    transition    ease-in-out    m-0    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               type="file"
               id="formFile"
             />
@@ -155,7 +142,7 @@ export default function ModalEditProducts({
             </label>
             <button
               onClick={handleSubmitForm}
-              type="submit"
+              type="button"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
               Confirm

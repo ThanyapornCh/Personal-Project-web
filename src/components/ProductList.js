@@ -50,23 +50,23 @@ export default function ProductList({
       </td>
       <td>{quantity}</td>
       <td>
-        <div className="flex space-x-2 justify-center">
+        <div className="flex  justify-center">
           <button
             type="button"
-            className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-800 hover:shadow-lg focus:bg-blue-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            className="inline-block px-6 py-2.5 mr-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-800 hover:shadow-lg focus:bg-blue-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             onClick={handleOnClick}
           >
             Edit
-            <ModalEditProducts
-              name={name}
-              price={price}
-              image={image}
-              quantity={quantity}
-              show={show}
-              setClose={setShow}
-              id={id}
-            />
           </button>
+          <ModalEditProducts
+            name={name}
+            price={price}
+            image={image}
+            quantity={quantity}
+            show={show}
+            setClose={setShow}
+            id={id}
+          />
 
           <button
             onClick={() => handleClickButton(id)}

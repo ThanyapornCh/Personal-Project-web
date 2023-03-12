@@ -1,8 +1,20 @@
 import { Avatar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FooterUser from '../components/FooterUser';
+import useAuth from '../hooks/useAuth';
 
 export default function UserPage() {
+  // const {logout} = useAuth()
+  const navigate = useNavigate();
+  // const handleLogoutClick = e => {
+  //   e.preventDefault();
+  //   navigate('/login');
+  // };
+  //   {
+  //   AuthActions.logout().then(() => {
+  //     window.location.reload();
+  //   });
+  // };
   return (
     <div className="w-screen h-[95vh] flex flex-col justify-between bg-gradient-to-br from-purple-700 to-amber-700">
       {/* <div className="flex flex-col gap-2 flex justify-center "> */}
@@ -46,10 +58,10 @@ export default function UserPage() {
         </div>
         <div>
           <button
-            name="acne"
             className={`w-full rounded-3xl px-10 py-2 bg-blue-600 text-white shadow-lg
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
             type="button"
+            // onClick={logout}
           >
             Log out
           </button>

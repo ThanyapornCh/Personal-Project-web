@@ -17,6 +17,7 @@ import AdminPage from '../pages/admin/AdminPage';
 import SignupPage from '../pages/SignupPage';
 import OrderStatusPage from '../pages/OrderStatusPage';
 import AdminOrderStatusPage from '../pages/admin/AdminOrderStatusPage';
+// import SearchHomePage from '../pages/SearchHomePage';
 
 const router = createBrowserRouter([
   {
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
     path: '/adminorderstatus',
     element: <AdminOrderStatusPage />,
   },
+  // {
+  //   path: '/searchhomes',
+  //   element: <SearchHomePage />,
+  // },
 
   // ]
   // },
