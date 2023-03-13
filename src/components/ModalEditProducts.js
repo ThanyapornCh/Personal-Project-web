@@ -23,7 +23,7 @@ export default function ModalEditProducts({
   const [productQuantity, setProductQuantity] = useState(quantity);
   const [productImage, setProductImage] = useState(null);
   const [producId, setProductId] = useState(id);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleSubmitForm = async e => {
     // console.log(
     //   productImage,
@@ -44,7 +44,8 @@ export default function ModalEditProducts({
       const res = await updateProductApi(formData);
       console.log(res.data);
     }
-    navigate('/cartadminpage');
+    // navigate('/cartadminpage');
+    window.location.reload();
   };
   useEffect(() => {
     const api = async () => {
@@ -61,10 +62,6 @@ export default function ModalEditProducts({
   const [allCategories, setAllCategories] = useState([]);
 
   const { handleUpdateProduct } = useProduct();
-
-  const handleOnClick = () => {
-    handleUpdateProduct();
-  };
 
   return (
     <div
@@ -145,7 +142,7 @@ export default function ModalEditProducts({
               type="button"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
-              Confirm
+              Update
             </button>
           </div>
         </div>

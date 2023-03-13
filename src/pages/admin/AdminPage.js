@@ -1,8 +1,19 @@
 import FooterAdmin from '../../components/FooterAdmin';
 import { Avatar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+// import useAuth from '../hooks/useAuth';
 
 export default function AdminPage() {
+  // const { logout } = useAuth();
+
+  // const handleLogout = async () => {
+  //   try {
+  //     await logout();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   return (
     <div className="w-screen  flex flex-col justify-between bg-gradient-to-br from-purple-700 to-amber-700">
       {/* <div className="flex flex-col gap-2 flex justify-center "> */}
@@ -59,10 +70,10 @@ export default function AdminPage() {
         </div>
         <div>
           <button
-            name="acne"
             className={`w-full rounded-3xl px-10 py-2 bg-blue-600 text-white shadow-lg
             hover:bg-gradient-to-r from-green-400 to-blue-500 hover:drop-shadow-md duration-300 ease-in `}
             type="button"
+            // onClick={handleLogout}
           >
             Log out
           </button>

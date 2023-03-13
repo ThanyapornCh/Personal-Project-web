@@ -42,6 +42,11 @@ export default function ProductContextProvider({ children }) {
     await axios.post('/products/updateProducts', formData);
   };
 
+  const fetchProduct = async () => {
+    const res = await productApi.getAllProductApi();
+    setProducts(res.data.products);
+  };
+
   function addProduct() {}
   // console.log(products);
 
@@ -65,6 +70,7 @@ export default function ProductContextProvider({ children }) {
         setTrigger,
         word,
         setWord,
+        fetchProduct,
       }}
     >
       {children}

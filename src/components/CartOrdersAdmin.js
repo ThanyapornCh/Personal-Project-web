@@ -1,15 +1,16 @@
 import CleanserPic from '../assets/images/cleanser.png';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
-import ProductList from './ProductList';
-import ModalAddProducts from './ModalAddProducts';
+import ProductList from '../components/ProductList';
+import ModalAddProducts from '../components/ModalAddProducts';
 import { useEffect, useState } from 'react';
 import { getAllProductApi } from '../apis/product-api';
-import ModalEditProducts from './ModalEditProducts';
+import ModalEditProducts from '../components/ModalEditProducts';
 import useProduct from '../hooks/useProduct';
 export default function CartOrdersAdmin() {
   // const ctx = useOrder();
   // const { order } = ctx;
   // console.log(ctx);
+  const { products, fetchProduct } = useProduct();
   const [edit, setEdit] = useState(true);
   const [show, setShow] = useState(false);
   const [product, setProduct] = useState([]);
@@ -17,10 +18,10 @@ export default function CartOrdersAdmin() {
     setShow(true);
   };
 
-  const fetchProduct = async () => {
-    const res = await getAllProductApi();
-    setProduct(res.data.products);
-  };
+  // const fetchProduct = async () => {
+  //   const res = await getAllProductApi();
+  //   setProduct(res.data.products);
+  // };
 
   useEffect(() => {
     fetchProduct();
@@ -78,7 +79,7 @@ export default function CartOrdersAdmin() {
                 </tr>
               </thead>
               <tbody>
-                {product?.map((item, index, idx) => (
+                {products?.map((item, index, idx) => (
                   <ProductList
                     index={index}
                     id={item.id}

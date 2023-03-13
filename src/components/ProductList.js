@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CleanserPic from '../assets/images/cleanser.png';
 import * as productApi from '../apis/product-api';
 import useOrder from '../hooks/useOrder';
-import ModalEditProducts from './ModalEditProducts';
+import ModalEditProducts from '../components/ModalEditProducts';
 import { useParams } from 'react-router-dom';
 import useProduct from '../hooks/useProduct';
 export default function ProductList({

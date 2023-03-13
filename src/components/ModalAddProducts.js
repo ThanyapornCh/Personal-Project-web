@@ -14,8 +14,6 @@ export default function ModalAddProducts({ show, setClose }) {
   const [productQuantity, setProductQuantity] = useState('');
   const [productImage, setProductImage] = useState(null);
 
-  const navigate = useNavigate();
-
   const handleSubmitForm = async e => {
     e.preventDefault();
     console.log(
@@ -56,12 +54,15 @@ export default function ModalAddProducts({ show, setClose }) {
     newProductImage,
     setNewProductImage,
     handleCreate,
+    fetchProduct,
   } = useProduct();
   console.log(newProductImage);
 
   const handleOnclick = () => {
     handleCreate();
-    navigate('/cartadminpage');
+    setClose(false);
+    fetchProduct();
+    // window.location.reload();
   };
 
   return (
@@ -158,7 +159,7 @@ export default function ModalAddProducts({ show, setClose }) {
               type="button"
               className=" rounded-full p-2 m-1 bg-gradient-to-br from-pink-500 to-yellow-500 text-white bold-2 shadow-xl font-medium drop-shadow-xl"
             >
-              Update
+              Confirm
             </button>
           </form>
         </div>
