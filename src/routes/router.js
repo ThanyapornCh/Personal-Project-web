@@ -12,6 +12,7 @@ import CleanserPage from '../pages/Products/CleanserPage';
 import CartsAdminPage from '../pages/admin/CartsAdminPage';
 import RedirectIfAuthenticate from '../features/Auth/RedirectIfAuthenticate';
 import ProtectedRoute from '../features/Auth/ProtectedRoute';
+import ProtectedRouteAdmin from '../features/Auth/ProtectedRouteAdmin';
 import SlipUserPage from '../pages/SlipUserPage';
 import AdminPage from '../pages/admin/AdminPage';
 import SignupPage from '../pages/SignupPage';
@@ -41,14 +42,6 @@ const router = createBrowserRouter([
     element: <SignupPage />,
   },
   {
-    path: '/userpage',
-    element: <UserPage />,
-  },
-  {
-    path: '/datapersonal',
-    element: <DataPersonalPage />,
-  },
-  {
     path: '/homepage',
     element: <HomePage />,
   },
@@ -56,11 +49,15 @@ const router = createBrowserRouter([
     path: '/userpage',
     element: <UserPage />,
   },
-
   {
-    path: '/menubar',
-    element: <MenuBar />,
+    path: '/datapersonal',
+    element: <DataPersonalPage />,
   },
+
+  // {
+  //   path: '/menubar',
+  //   element: <MenuBar />,
+  // },
 
   {
     path: '/productspage',
@@ -81,26 +78,33 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/cartadminpage',
-    element: <CartsAdminPage />,
-  },
-  ,
-  {
     path: '/slipuserpage',
     element: <SlipUserPage />,
   },
+
+  {
+    path: '/orderstatus',
+    element: <OrderStatusPage />,
+  },
+
+  // {
+  //   element: <ProtectedRouteAdmin></ProtectedRouteAdmin>,
+  //   children: [
   {
     path: '/adminpage',
     element: <AdminPage />,
   },
+
   {
-    path: '/orderstatus',
-    element: <OrderStatusPage />,
+    path: '/cartadminpage',
+    element: <CartsAdminPage />,
   },
   {
     path: '/adminorderstatus',
     element: <AdminOrderStatusPage />,
   },
+  //   ],
+  // },
   // {
   //   path: '/searchhomes',
   //   element: <SearchHomePage />,

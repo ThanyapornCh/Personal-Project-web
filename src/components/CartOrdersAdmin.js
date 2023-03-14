@@ -12,6 +12,7 @@ export default function CartOrdersAdmin() {
   // console.log(ctx);
   const { products, fetchProduct } = useProduct();
   const [edit, setEdit] = useState(true);
+  const [trigger, setTrigger] = useState(false);
   const [show, setShow] = useState(false);
   const [product, setProduct] = useState([]);
   const handleClick = () => {
@@ -24,9 +25,13 @@ export default function CartOrdersAdmin() {
   // };
 
   useEffect(() => {
-    fetchProduct();
+    const run = async () => {
+      await fetchProduct();
+    };
+    run();
+
     console.log(edit);
-  }, [edit]);
+  }, [trigger]);
   const list = [
     { name: 'cleanser', price: '100', quantity: 5 },
     { name: 'larniage', price: '150', quantity: 9 },
@@ -89,6 +94,7 @@ export default function CartOrdersAdmin() {
                     quantity={item.productQuantity}
                     edit={edit}
                     setEdit={setEdit}
+                    setTrigger={setTrigger}
                   />
                 ))}
               </tbody>
@@ -102,7 +108,11 @@ export default function CartOrdersAdmin() {
           </div>
         </div>
       </div>
-      <ModalAddProducts show={show} setClose={setShow} />
+      <ModalAddProducts
+        show={show}
+        setClose={setShow}
+        setTrigger={setTrigger}
+      />
     </div>
   );
 }

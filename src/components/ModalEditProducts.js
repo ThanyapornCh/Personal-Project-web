@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import {
-  createProductApi,
   getAllBrandApi,
   getAllCategoriesApi,
   updateProductApi,
@@ -16,6 +14,8 @@ export default function ModalEditProducts({
   price,
   quantity,
   id,
+  setEdit,
+  setTrigger,
 }) {
   const [productName, setProductName] = useState(name);
   const [productPrice, setproductPrice] = useState(price);
@@ -23,30 +23,25 @@ export default function ModalEditProducts({
   const [productQuantity, setProductQuantity] = useState(quantity);
   const [productImage, setProductImage] = useState(null);
   const [producId, setProductId] = useState(id);
+
+  const [allBrand, setAllBrand] = useState([]);
+  const [allCategories, setAllCategories] = useState([]);
+
+  const {
+    handleUpdateProduct,
+    newProduct,
+    setNewProduct,
+    newProductImage,
+    setNewProductImage,
+  } = useProduct();
   // const navigate = useNavigate();
-  const handleSubmitForm = async e => {
-    // console.log(
-    //   productImage,
-    //   productName,
-    //   productDescription,
-    //   productPrice,
-    //   productQuantity
-    // );
-    console.log('success');
-    if (productImage) {
-      console.log('ok');
-      const formData = new FormData();
-      formData.append('productImage', productImage);
-      formData.append('productName', productName);
-      formData.append('productPrice', productPrice);
-      formData.append('productDescription', productDescription);
-      formData.append('id', producId);
-      const res = await updateProductApi(formData);
-      console.log(res.data);
-    }
-    // navigate('/cartadminpage');
-    window.location.reload();
-  };
+  // console.log(
+  //   productImage,
+  //   productName,
+  //   productDescription,
+  //   productPrice,
+  //   productQuantity
+  // );
   useEffect(() => {
     const api = async () => {
       const brand = await getAllBrandApi();
@@ -58,10 +53,24 @@ export default function ModalEditProducts({
     };
     api();
   }, []);
-  const [allBrand, setAllBrand] = useState([]);
-  const [allCategories, setAllCategories] = useState([]);
 
-  const { handleUpdateProduct } = useProduct();
+  const handleSubmitForm = async e => {
+    console.log('success');
+    // if (productImage) {
+    //   console.log('ok');
+    //   const formData = new FormData();
+    //   formData.append('productImage', productImage);
+    //   formData.append('productName', productName);
+    //   formData.append('productPrice', productPrice);
+    //   formData.append('productDescription', productDescription);
+    //   formData.append('id', producId);
+    //   const res = await updateProductApi(formData);
+    //   console.log(res.data);
+    // }
+    await handleUpdateProduct(id);
+    setTrigger(prv => !prv);
+    setClose(false);
+  };
 
   return (
     <div
@@ -88,7 +97,7 @@ export default function ModalEditProducts({
               Image
             </label>
             <input
-              onChange={e => setProductImage(e.target.files[0])}
+              onChange={e => setNewProductImage(e.target.files[0])}
               className="form-control    block    w-full    px-3    py-1.5    text-base    font-normal    text-blue-700    bg-white bg-clip-padding    border border-solid border-gray-300    rounded-lg    transition    ease-in-out    m-0    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               type="file"
               id="formFile"
@@ -99,8 +108,10 @@ export default function ModalEditProducts({
               </span>
               <input
                 className="w-full text-black px-3 py-2 rounded-md border border-slate-400"
-                value={productName}
-                onChange={e => setProductName(e.target.value)}
+                value={newProduct.productName}
+                onChange={e =>
+                  setNewProduct({ ...newProduct, productName: e.target.value })
+                }
                 type="name"
               />
             </label>
@@ -110,8 +121,13 @@ export default function ModalEditProducts({
               </span>
               <input
                 className="w-full px-3 py-2 text-black rounded-md border border-slate-400"
-                value={productDescription}
-                onChange={e => setproductDescription(e.target.value)}
+                value={newProduct.productDescription}
+                onChange={e =>
+                  setNewProduct({
+                    ...newProduct,
+                    productDescription: e.target.value,
+                  })
+                }
                 type="name"
               />
             </label>
@@ -121,8 +137,10 @@ export default function ModalEditProducts({
               </span>
               <input
                 className="w-full text-black px-3 py-2 rounded-md border border-slate-400"
-                value={productPrice}
-                onChange={e => setproductPrice(e.target.value)}
+                value={newProduct.productPrice}
+                onChange={e =>
+                  setNewProduct({ ...newProduct, productPrice: e.target.value })
+                }
                 type="name"
               />
             </label>
@@ -132,8 +150,13 @@ export default function ModalEditProducts({
               </span>
               <input
                 className="w-full  text-black px-3 py-2 rounded-md border border-slate-400"
-                value={productQuantity}
-                onChange={e => setProductQuantity(e.target.value)}
+                value={newProduct.productQuantity}
+                onChange={e =>
+                  setNewProduct({
+                    ...newProduct,
+                    productQuantity: e.target.value,
+                  })
+                }
                 type="name"
               />
             </label>

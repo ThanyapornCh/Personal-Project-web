@@ -7,33 +7,13 @@ import {
 } from '../apis/product-api';
 import useProduct from '../hooks/useProduct';
 
-export default function ModalAddProducts({ show, setClose }) {
+export default function ModalAddProducts({ show, setClose, setTrigger }) {
   const [productName, setProductName] = useState('');
   const [productPrice, setproductPrice] = useState('');
   const [productDescription, setproductDescription] = useState('');
   const [productQuantity, setProductQuantity] = useState('');
   const [productImage, setProductImage] = useState(null);
 
-  const handleSubmitForm = async e => {
-    e.preventDefault();
-    console.log(
-      productImage,
-      productName,
-      productDescription,
-      productPrice,
-      productQuantity
-    );
-
-    if (productImage) {
-      const formData = new FormData();
-      formData.append('productImage', productImage);
-      formData.append('productName', productName);
-      formData.append('productPrice', productPrice);
-      formData.append('productDescription', productDescription);
-      const res = await createProductApi(formData);
-      console.log(res.data);
-    }
-  };
   useEffect(() => {
     const api = async () => {
       const brand = await getAllBrandApi();
@@ -58,11 +38,12 @@ export default function ModalAddProducts({ show, setClose }) {
   } = useProduct();
   console.log(newProductImage);
 
-  const handleOnclick = () => {
-    handleCreate();
+  const handleOnclick = async () => {
+    await handleCreate();
     setClose(false);
-    fetchProduct();
-    // window.location.reload();
+    setTrigger(false);
+    // fetchProduct();
+    // window.location.reload(false);
   };
 
   return (
@@ -77,7 +58,7 @@ export default function ModalAddProducts({ show, setClose }) {
           onClick={e => e.stopPropagation()}
           className="block p-6 rounded-lg shadow-lg bg-white max-w-xl"
         >
-          <form onSubmit={handleSubmitForm}>
+          <form>
             <select>
               {allBrand?.map(el => (
                 <option>{el.productName}</option>
